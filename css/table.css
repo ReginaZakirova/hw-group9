@@ -1,0 +1,106 @@
+span.legend {
+    display: inline-block;
+    margin-bottom: 4px;
+    background-color: #ffa4b6;
+    padding:10px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    width: 600px;
+}
+
+td {
+    border: 1px solid #000;
+}
+
+caption {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+
+td {
+    padding: 4px;
+    vertical-align: top;
+    alignment: top;
+    width: 200px;
+}
+
+.symbol {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.yellow, span.yellow {
+    background-color: #fff401;
+}
+
+td.yellow div.container, td.blue div.container {
+    display: flex;
+    justify-content: space-between;
+    height: 18px;
+}
+
+td.blue div.container {
+    flex-direction: row-reverse;
+}
+
+.blue, span.blue {
+    background-color: #9ce0fe;
+}
+
+td.blue p.name {
+    text-align: right;
+}
+
+td.red {
+    background-color: #ffa4b6;
+}
+
+td.yellow span.massa {
+    display:block;
+    text-align: right;
+}
+
+td.yellow p.name, td.blue p.name {
+    margin: 0;
+    font-weight: bold;
+}
+
+td.yellow span.number, td.blue span.number {
+    font-weight: bold;
+}
+
+td.red div.container {
+    width: 48%;
+    float:right;
+    text-align: right;
+}
+
+td.red div.symbol {
+    width: 48%;
+    float:left;
+}
+
+td.red div.name {
+    clear: both;
+}
+
+td.red div.name, td.red span.number {
+    font-weight: bold;
+}
+
+td.red p.massa {
+    margin: 0;
+}
+
+
+td.yellow {
+    background-color: #fff401;
+}
+
+td.blue {
+    background-color: #9ce0fe;
+}
