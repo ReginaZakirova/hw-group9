@@ -1,7 +1,90 @@
+.main_menu, .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.razdel {
+    padding: 10px 0px;
+}
+.main_container  {
+    border:1px solid #999;
+    /*
+    max-width: 1400px;
+    */
+}
+.main_container div {
+    background-color: #efefef;
+}
+
+.main_header, .main_photo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.main_fio {
+    min-height:25%;
+    text-align: center;
+    border-bottom:1px solid #999;
+}
+.main_header, .main_menu {
+    border-bottom:1px solid #999;
+}
+.about {
+    display: flex;
+
+}
+.about div {
+}
+.main_photo {
+    flex: 1;
+    border-right:1px solid #999;
+}
+
+.main_info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-bottom:1px solid #999;
+    color: #000;
+
+}
+
+.about_me {
+    display: flex;
+    flex-wrap: wrap;
+    min-height:75%;
+
+}
+
+.biography {
+    border-right:1px solid #999;
+}
+
+.about_me div {
+    flex:1;
+    padding:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
 header {
     width: 90%;
     border: 1px solid #999;
-    //height: 120px;
+    background-color: #fff;
 }
 
 header img{
@@ -9,43 +92,14 @@ header img{
     margin: 20px auto;
 }
 
-.main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /*
-    padding: 20px;
-    */
-    background-color: #ccc;
-}
 
-.razdel {
-    padding: 10px 0px;
-}
-
-/*.main {
-    background-color: #ccc;
-    padding: 20px;
-}
-
-.main ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-.main a {text-decoration: none; }
-
-.main li {
-    display: inline-block;
-    border-right: 1px solid #000;
-    padding: 0px 10px;
-}*/
 
 .photo {
     width: 30%;
     float: left;
     border: 1px solid #999;
     height: 400px;
+    background-color: #fff;
 }
 
 .photo img{
@@ -62,6 +116,7 @@ header img{
     display: inline-block;
     vertical-align: auto;
     text-align: center;
+    color: #000;
 }
 
 .info {
@@ -71,6 +126,7 @@ header img{
     height: 288px;
     padding: 10px 0 0 10px;
     background-color: #efefef;
+    color: #000;
 }
 
 .mnenie {
@@ -81,4 +137,93 @@ header img{
     height: 288px;
     padding: 10px 9px 0 10px;
     background-color: #efefef;
+    color: #000;
 }
+
+.img, .desc {
+    border: 1px solid #000;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+}
+.desc {
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 10px;
+}
+.img img {
+    height: 128px;
+}
+
+/* Flex page */
+.container {
+    display: flex;
+    border: 2px solid #333;
+    background-color: #ccc;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-self: stretch;
+}
+.one, .two, .three, .four {
+    margin: 10px;
+    flex:1;
+    background-color: #efefef;
+    color: #333;
+    border: 2px solid #333;
+}
+/* Flex page end */
+
+/* Grid page */
+.container1 {
+    border: 2px solid #333;
+    background-color: #ccc;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    'one two'
+    'three four'
+}
+.container1.one {
+    background-color: #ccc;
+    grid-area: one;
+}
+.container1.two {
+    background-color: #ccc;
+    grid-area: two;
+}
+.container1.three {
+    background-color: #ccc;
+    grid-area: three;
+}
+.container1.four {
+    background-color: #ccc;
+    grid-area: four;
+}
+.container1.one, .container1.two, .container1.three, .container1.four {
+    margin: 10px;
+    background-color: #efefef;
+    color: #333;
+    border: 2px solid #333;
+}
+/* Grid page end */
+
+/*медиа для печати*/
+@media print {
+    body {
+        background-color: #333;
+    }
+}
+
+/*медиа для адаптива*/
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .container1 {
+        grid-template-columns: 100%;
+        grid-template-areas:
+        'one' 'two' 'three' 'four'
+    }
+}
+
