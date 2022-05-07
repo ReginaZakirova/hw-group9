@@ -1,0 +1,120 @@
+td {
+    width: 130px;
+    height: 65px;
+    border-bottom: 3px dashed rgb(45, 230, 69);
+    border-right: 3px dashed rgb(45, 230, 69);
+    vertical-align: top;
+}
+
+table {
+    border: 3px dashed rgb(45, 230, 69);
+    border-right: none;
+    border-bottom: none;
+    border-collapse: collapse;
+    margin-top: 35px;
+}
+
+caption {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    width: 30%;
+    height: 50%;
+    margin: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-align: left;
+}
+
+a div {
+    text-align: right;
+    width: 60%;
+    font-weight: bold;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+div span {
+    display: block;
+    font-weight: lighter;
+}
+
+.nameElement {
+    font-weight: bold;
+    vertical-align: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.red {
+    background-color: darksalmon;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: rgb(155, 213, 240);
+}
+
+.revers {
+    flex-direction: row-reverse;
+}
+
+.revers div {
+    text-align: left;
+}
+
+.revers h1 {
+    text-align: right;
+}
+
+.ourTable-cell {
+    text-align: center;
+}
+
+.ourTable-cell img {
+    transform: rotate(90deg);
+    -webkit-filter: blur(5px);
+}
+
+.test {
+    vertical-align: middle;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2;
+    width: 300px;
+    height: 120px;
+    margin-top: 40px;
+    border: 2px solid black;
+    background-color: coral;
+}
+
+.grid div {
+    justify-self: right;
+    margin: 5px;
+    text-align: right;
+}
+
+.grid .nameElement {
+    align-self: end;
+    margin: 5px;
+}
+
+ 

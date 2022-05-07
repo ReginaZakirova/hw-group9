@@ -1,0 +1,428 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    background-color: blueviolet;
+}
+
+nav {
+    width: 80%;
+    height: 100%;
+}
+
+.mobilMenu {
+    display: none;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+    width: 70%;
+    height: 98%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+    border-right: 2px solid goldenrod;
+    
+}
+
+ a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
+    color: chocolate;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header-icon {
+    display: flex;
+    width: 220px;
+    height: 100%;
+    flex-shrink: 0;
+    background: url(../img/1.png) no-repeat -98px -15px;
+    background-size: 315px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 55px;
+    color: darkorange;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main-iconConteiner {
+    width: 100%;
+    height: 80px;
+    background-color: cornflowerblue;
+    border-bottom: 5px solid black;
+}
+
+.main-icon {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.mainInf-text {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-inf {
+    display: flex;
+}
+
+.text-infMy {
+    width: 47%;
+    padding: 10px;
+}
+
+.text-feedback {
+    width: 47%;
+    padding: 10px;
+}
+
+span {
+    display: block;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: dimgray;
+}
+
+.block1-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2;
+    grid-row-gap: 20px;
+    grid-template-areas: 
+    'topRow topRow2 topRow3 topRow4'
+    'bottomRow bottomRow2 bottomRow3 bottomRow4';
+    margin-top: 40px;
+}
+
+.foto1 {
+    width: 300px;
+    height: 250px;
+    grid-area: topRow;
+    background: url(../img/7.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto2 {
+    width: 300px;
+    height: 250px;
+    grid-area: topRow2;
+    background: url(../img/8.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto3 {
+    width: 300px;
+    height: 250px;
+    grid-area: topRow3;
+    background: url(../img/9.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto4 {
+    width: 300px;
+    height: 250px;
+    grid-area: topRow4;
+    background: url(../img/10.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.block1-grid span:nth-child(1) {
+    grid-area: bottomRow;
+}
+
+.block1-grid span:nth-child(2) {
+    grid-area: bottomRow2;
+}
+
+.block1-grid span:nth-child(3) {
+    grid-area: bottomRow3;
+}
+
+.block1-grid span:nth-child(4) {
+    grid-area: bottomRow4;
+}
+
+.block2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4;
+    grid-row-gap: 20px;
+    grid-template-areas: 
+    'Row1 Row12'
+    'Row2 Row22'
+    'Row3 Row32'
+    "Row4 Row42";
+    margin-top: 40px;
+}
+
+.foto5 {
+    width: 300px;
+    height: 250px;
+    grid-area: Row1;
+    background: url(../img/11.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto6 {
+    width: 300px;
+    height: 250px;
+    grid-area: Row12;
+    background: url(../img/12.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto7 {
+    width: 300px;
+    height: 250px;
+    grid-area: Row3;
+    background: url(../img/13.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.foto8 {
+    width: 300px;
+    height: 250px;
+    grid-area: Row32;
+    background: url(../img/14.jpg) no-repeat;
+    background-size: 350px 300px;
+    justify-self: center;
+}
+
+.block2-grid span:nth-child(1) {
+    grid-area: Row2;
+}
+
+.block2-grid span:nth-child(2) {
+    grid-area: Row22;
+}
+
+.block2-grid span:nth-child(3) {
+    grid-area: Row4;
+}
+
+.block2-grid span:nth-child(4) {
+    grid-area: Row42;
+}
+
+.block1-flex {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.foto-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 25%;
+}
+
+.block2-flex {
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.foto-conteiner2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.foto-conteiner2 span {
+    width: 100%;
+}
+
+@media screen and (max-width: 1230px) 
+{
+    .block1-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4;
+        grid-template-areas: 
+        'topRow topRow2'
+        'bottomRow bottomRow2'
+        'topRow3 topRow4'
+        'bottomRow3 bottomRow4';
+    }
+
+    .block1-flex {
+        flex-wrap: wrap;
+    }
+
+    .foto-conteiner {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+
+    .foto-conteiner span {
+        width: 98%;
+    }
+
+}
+
+@media screen and (max-width: 1150px) 
+{
+    .text-infMy, .text-feedback {
+        width: 98%;
+    }
+
+}
+
+@media screen and (max-width: 670px) 
+{
+    .main-inf {
+        flex-wrap: wrap;
+    }
+
+    .mainInf-foto {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .block1-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8;
+        grid-template-areas: 
+        'topRow'
+        'bottomRow'
+        'topRow2'
+        'bottomRow2'
+        'topRow3'
+        'bottomRow3'
+        'topRow4'
+        'bottomRow4';
+    }
+
+    .block2-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8;
+        grid-row-gap: 20px;
+        grid-template-areas: 
+        'Row1'
+        'Row2'
+        'Row12'
+        'Row22'
+        'Row3'
+        'Row4'
+        'Row32'
+        'Row42';
+    }
+
+    .foto-conteiner2, .foto-conteiner {
+        width: 100%;
+    }
+
+    .block2-flex {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width: 570px) 
+{
+    .mobilMenu {
+        display: block;
+        font-size: 35px;
+        color: chartreuse;
+        text-align: center;
+        border: 2px solid chartreuse;
+
+    }
+
+    .menuOpen {
+        display: none;
+    }
+
+    .nav-menu {
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 150px;
+        height: 300px;
+        background-color: greenyellow;
+        border: 2px solid grey;
+
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .mainInf-foto img {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+@media print {
+
+    .text-infMy, .text-feedback {
+        width: 100%;
+    }
+
+    .block1-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4;
+        grid-template-areas: 
+        'topRow topRow2'
+        'bottomRow bottomRow2'
+        'topRow3 topRow4'
+        'bottomRow3 bottomRow4';
+    }
+
+    .block1-flex {
+        flex-wrap: wrap;
+    }
+
+    .foto-conteiner {
+        width: 50%;
+    }
+
+    .foto-conteiner span {
+        width: 100%;
+    }
+
+}
