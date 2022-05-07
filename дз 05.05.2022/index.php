@@ -147,6 +147,9 @@
             </div>
         </div>
     </main>
+    <?php
+        $time = 8;
+    ?>
     <script src="mobilBt.js"></script>
 </body>
 </html>
