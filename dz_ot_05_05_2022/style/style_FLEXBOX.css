@@ -1,0 +1,53 @@
+﻿
+.blok-flex1 {    /*самый большой блок (где хранится всё остальное) */
+    display: flex;
+    flex-wrap: wrap;       /* ИМЕННО ЭТО СВОЙСТВО ПРИДАЕТ АДАПТИВНОСТЬ, что бы при просмтре в вертикальной ориентации, блоки перещались на следующуюс строку */
+    flex-direction: row;    /*указывает как элементы распологаются в контейнере row   column */
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    margin: 50px; /* растояние вокруг blok-flex1 */
+    background-color: #86e2b6;
+}
+.blok-flex2 {    /* подблок в самом большом блоке */
+    display: flex;
+    flex: 1 200px; /* что бы blok-flex2 растягивался по ширине странци */
+    flex-direction: row;    /*растягивает и сжимает флекс-элемент относительно его собственной ширины*/
+    flex-wrap: wrap;       /*что бы была возможность перенести на следующую строку */
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    flex-direction: row;    /*указывает как элементы распологаются в контейнере row   column */
+    margin: 50px;    /* растояние вокруг blok-flex2 */
+    padding: 25px;    /* внутринние отсупы до объектов blok-flex2 */
+    background-color: #ab75cd;
+}
+.blok-flex2-shema2 {    /*самый большой блок (где хранится всё остальное) 2 cхема */
+    display: flex;
+    flex-wrap: wrap;       /*что бы была возможность перенести на следующую строку */
+    flex-direction: row;    /*указывает как элементы распологаются в контейнере row   column */
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    margin: 50px;
+    background-color: #86e2b6;
+}
+
+container {
+    display: flex;
+    flex-direction: column;    /*указывает как элементы распологаются в контейнере row   column */
+    flex-wrap: wrap;    /*вывод в одну строку или на несколько. wrap - расположение в нескольких линиях, wrap-reverse*/
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    flex: 1 500px;    /*1 это безразмерная величина */
+}
+.break {   /*чтобы сделать перенос на новю строку внутри флекса*/
+    background-color: #86e2b6;  /*чтобы сделать перенос на новю строку внутри флекса*/
+    flex-basis: 100%;
+    height: 0;
+}
+.kartinka-verh {
+    /*размер картинки*/
+    display: flex;
+    background-color: #00eaff;
+    height: 80px;
+    /*размер картинки*/
+    margin-left: auto;
+    /*выравниванием картинку по центру*/
+    margin-right: auto;
+    /*выравниванием картинку по центру*/
+    padding: 25px;   /*отступы во круг картинки*/
+}

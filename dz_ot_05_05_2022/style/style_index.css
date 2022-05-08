@@ -1,0 +1,204 @@
+* {
+    margin: 0;  /* что бы не было отступов */
+    padding: 0; /* что бы не было отступов */
+    font-size: 17pt;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: justify;   /* выравниваем текст по ширине */
+
+}
+.blok-anketa {
+    display: flex;
+    flex-wrap: wrap;       /* ИМЕННО ЭТО СВОЙСТВО ПРИДАЕТ АДАПТИВНОСТЬ, что бы при просмтре в вертикальной ориентации, блоки перещались на следующуюс строку */
+    flex-direction: row;    /*указывает как элементы распологаются в контейнере row   column */
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    margin: 1000px; /* растояние вокруг blok-flex1 */
+    background-color: #e28698;
+}
+h1, h2 {
+    text-align: center;
+}
+.blok_shapka {
+    display: flex;
+    justify-content: right;      /* делаем всё содержимое блока справа */
+    /* background-color: #f5cf9f;*/
+     height: 200px;    /* высота */
+    width: 100%;    /* ширина */
+}
+.blok-menu {
+    display: flex;
+    /*   background-color: #e8bc81;*/
+    height: 40px;    /*высота*/
+    width: 100%;    /* какую ширину занимает*/
+    align-items: center;   /* выравниваем содержимое по центру*/
+    justify-content: center;  /* выравниваем содержимое по центру*/
+}
+/* БЛОК МЕНЮЮЮЮЮЮ*/
+a {
+/*  color: #69C;*/
+  text-decoration: none;
+}
+a:hover {
+  color: #F60;
+}
+
+/* меню */
+.nav {
+    margin: -3px 0;
+}
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+.nav li {
+    margin: 0 5px 10px 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    *display:inline; /* ie7 */
+}
+.nav a {
+    padding: 3px 12px;
+    text-decoration: none;
+    color: #999;
+    line-height: 100%;
+}
+.nav a:hover {
+    color: #000;
+}
+.nav .current a {
+    background: #aa8787;
+    color: #fff;
+    border-radius: 3px;
+}
+/* меню справа */
+.nav.right ul {
+    text-align: right;
+}
+/* меню по центру */
+.nav.center ul {
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        position: relative;
+        min-height: 40px;
+    }
+    .nav ul {
+        width: 180px;
+        padding: 5px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid 1px #aaa;
+        background: #FAFAFA url(images/icon-menu.png) no-repeat 10px 11px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.3);
+    }
+    .nav li {
+        display: none; /* скрыть все <li> пункты */
+        margin: 0;
+    }
+    .nav .current {
+        display: block; /* показывать только текущие активные <li> пункты */
+    }
+    .nav a {
+        display: block;
+        padding: 5px 5px 5px 32px;
+        text-align: left;
+    }
+    .nav .current a {
+        background: none;
+        color: #666;
+    }
+
+    /* при наведении на пункты меню */
+    .nav ul:hover {
+        background-image: none;
+    }
+    .nav ul:hover li {
+        display: block;
+        margin: 0 0 5px;
+    }
+    .nav ul:hover .current {
+        background: url(images/icon-check.png) no-repeat 10px 7px;
+    }
+    /* адаптивное меню справа */
+    .nav.right ul {
+        left: auto;
+        right: 0;
+    }
+    /* адаптивное меню по центру */
+    .nav.center ul {
+        left: 50%;
+        margin-left: -90px;
+    }
+}
+/* КОНЕЦ БЛОКА МЕНЮ*/
+.photo {  /* стиль самой фотографии*/
+    display: block;
+    margin: 0 auto;
+    /*выравнивание картинки по центру*/
+    margin-left: auto;
+    height: 550px;
+    float: none;
+}
+.podblok-grid { /* подблок с 3 дивами справа*/
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr  ;   /*строки и их размеры */
+    grid-template-rows: 1fr 6fr;   /*задаем размеры и количество строк */
+    gap: 10px;			    /* расстояние между КОЛОНКАМИ И СТРОЧКАМИ в гриде */
+    grid-column-gap:15px;   /* расстояние между столбцаами в гриде */
+    justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+    margin: 0px;                    /*внешнее расстояние до блока */
+    padding: 10px;                  /* внутриннее расстояние до блока*/
+    /*    background-color: #eadbb9;*/
+       grid-template-areas:            /*выбираем расположение объектов в гриде */
+            "phot nam  nam"
+            "phot  inf otz ";
+}
+.blok-photo {
+    display: grid;
+    height: 600px; /* что бы отдель блок с фото */
+    width: 550px;    /* что бы отдель блок с фото */
+    align-self: center;     /* выравнивание по высоте */
+    justify-self: center;   /* выравнивание по горизонтали */
+    grid-area: phot;
+}
+.blok-name {
+    display: grid;
+    height: 100%;     /* высота блока */
+    max-height: 40px;     /* максимальная высота блока*/
+    /* background-color: #d00b71;*/
+    grid-area: nam;
+    align-self: center;     /* выравнивание по высоте */
+    justify-self: center;   /* выравнивание по горизонтали */
+}
+.blok-info {
+    grid-area: inf;
+    justify-self: center;   /* выравнивание по горизонтали */
+    padding: 15px;                  /* внутриннее расстояние до блока*/
+}
+.blok-otziv {
+    display: grid;
+    padding: 15px;                  /* внутриннее расстояние до блока*/
+    grid-area: otz;
+}
+@media screen and (max-width: 1050px) {    /* адаптация  podblok-grid для других размеров экрана*/
+    .podblok-grid  {
+        display: grid;
+        grid-template-columns: 250px  250px   ;   /*стоблцы и их размеры */
+        grid-template-rows: 1fr ;   /*задаем размеры и количество строк */
+        gap: 5px;			    /* расстояние между КОЛОНКАМИ И СТРОЧКАМИ в гриде */
+        grid-column-gap:5px;   /* расстояние между столбцаами в гриде */
+        justify-content: space-evenly;    /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
+        margin: 0px;                    /*внешнее расстояние до блока */
+        padding: 10px;                  /* внутриннее расстояние до блока*/
+        grid-template-areas:            /*выбираем расположение объектов в гриде */
+                "phot phot"
+                 "nam  nam"
+                  "inf otz ";
+    }
+    .blok-menu {
+           justify-content: left;  /* меню распологаем слева, что бы кнопочка меню слева была после скрытия*/
+    }
+}
