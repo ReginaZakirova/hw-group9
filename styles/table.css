@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+}
+body{
+	width: 1000px;
+	height: 500px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10 px;
+}
+.element{
+	outline: 0.01px solid black;
+	outline-offset: -0.01px;
+}
+.element-table{
+	float:left;
+	width:100%;	
+}
+.string-1, .string-2{
+	float:left;
+	width:100%;	
+}
+.element{
+	float:left;
+	width: 250px;
+	height: calc(500px/4);			
+}
+.string-1{
+	background-color: #96d1e2;
+}
+.string-2{
+	background-color: #f2e237;
+}
+.string-1  .name{
+	float: right;
+	text-align: right;
+
+}
+.string-1  .numeric{
+	float: right;
+}
+.string-1 .full-name{
+	float: right;
+	text-align: right;
+}
+.string-2  .name{
+	float: left;
+	text-align: left;
+}
+.string-2  .numeric{
+	float: left;
+	text-align: right;
+}
+.string-2 .full-name{
+	float: left;
+	text-align: left;
+}
+.name{
+	width: calc(250px/2);
+	font-size: 70px;
+	height: calc(500px/6);
+	margin: 0;
+}
+.numeric{
+	width: calc(250px/2);
+	height: calc(500px/6);
+	display: inline-block;
+}
+.full-name{
+	font-size: 30px;
+	width: 100%;
+	height: calc(500px/12);
+}
+.number{
+	width: 100%;
+	float: right;
+	font-size: 30px;
+}
+.name, .full-name, .number{
+	font-weight: bold;
+	font-family: "Georgia";
+}
+.mass{
+	font-size: 30px;
+}
+.numeric, .name, .full-name{
+	box-sizing: border-box;
+	padding: 2px;
+}
+p{
+	color: black;
+}
