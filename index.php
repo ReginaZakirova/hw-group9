@@ -37,7 +37,6 @@ else $background_color = 'header_day';
                     <div class="review">
                         <div class="textInfo">
                             Все супер, пока предложений нет.<br> 
-                            Старался использовать только те инструменты, которые были в презентации.
                         </div>
                     </div>
                 </div>
