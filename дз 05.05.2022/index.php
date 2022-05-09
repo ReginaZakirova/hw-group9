@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="Курсы, обучение">
     <link rel="stylesheet" href="style/style.css">
+    <?php
+        $time = getdate();
+        $time = $time["hours"];
+        if ($time < 8 || $time >= 20) {
+            echo "<link rel='stylesheet' href='style/styleNight.css'>";
+        }
+    ?>
     <title>Домашняя работа 1</title>
 </head>
-<body>
+<body class="night">
     <header class="page-header">
         <nav>
             <div class="mobilMenu" id="mobilMenu">м</div>
@@ -147,9 +154,7 @@
             </div>
         </div>
     </main>
-    <?php
-        $time = 8;
-    ?>
-    <script src="mobilBt.js"></script>
+    <script src="scripts/mobilBt.js"></script>
+    <script src="scripts/night.js"></script>
 </body>
 </html>

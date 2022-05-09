@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+.night {
+    background: url(../img/15.jpg);
+    background-size: 100% auto;
+}
+
+span {
+    color: orange;
+}
+
+li {
+    color: limegreen;
+}
+
+form {
+    color: aquamarine;
+}
+
