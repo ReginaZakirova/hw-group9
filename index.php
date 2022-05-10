@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<?php
-$cur_hour = date('H');
-//$cur_hour = 0;
-if ($cur_hour >= 8 && $cur_hour < 20)
-    $day_night_style="day";
-else
-    $day_night_style="night";
-?>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/index.css">
+    <?php include 'php/day-night.php';?>
     <link rel="stylesheet" href="css/<?php echo $day_night_style?>.css">
 </head>
 <body>
