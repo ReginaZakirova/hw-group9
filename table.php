@@ -5,6 +5,8 @@
     <title>Таблица менделеева</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/table.css">
+    <?php include 'php/day-night.php';?>
+    <link rel="stylesheet" href="css/<?php echo $day_night_style?>.css">
 </head>
 <body>
 <header>
