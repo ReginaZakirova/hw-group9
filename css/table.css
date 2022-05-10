@@ -1,0 +1,56 @@
+table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+td{
+    width: 100px;
+}
+.left_element{
+    margin: 0;
+    float: left;
+}
+.left_number{
+    float: right;
+    font-weight: bold;
+}
+.left_mass{
+    clear: right;
+    float: right;
+}
+.left_name{
+    clear: both;
+    font-weight: bold;
+}
+.right_element{
+    margin: 0;
+    float: right;
+}
+.right_number{
+    float: left;
+    font-weight: bold;
+}
+.right_mass{
+    clear: left;
+    float: left;
+}
+.right_name{
+    clear: both;
+    font-weight: bold;
+    float: right;
+}
+.color_black{
+    color: black;
+}
+.background-color_red{
+    background-color: #ff6f6b;
+}
+.background-color_yellow{
+    background-color: #f9ff9f;
+}
+.background-color_blue{
+    background-color: #5381ff;
+}
+.background-color_grey{
+    background-color: #bfbdc8
+}

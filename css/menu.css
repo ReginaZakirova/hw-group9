@@ -1,0 +1,25 @@
+body{
+    background-color: #bbcbe5;
+}
+header, .main-menu{
+    display: flex;
+}
+.menu-item{
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 29px;
+    margin-bottom: 29px;
+    margin-right: 10px;
+    background-color: #9497ff;
+}
+.menu-link{
+    text-decoration: none;
+}
+@media screen and (max-width:546px){
+    .logo__display{
+        display: none;
+    }
+    .menu-item{
+        font-size: 5vw;
+    }
+}
