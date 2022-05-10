@@ -1,6 +1,3 @@
-body{
-    background-color: #bbcbe5;
-}
 header, .main-menu{
     display: flex;
 }
@@ -15,8 +12,13 @@ header, .main-menu{
 .menu-link{
     text-decoration: none;
 }
+.header__logo{
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
 @media screen and (max-width:546px){
-    .logo__display{
+    .header__logo{
         display: none;
     }
     .menu-item{

@@ -1,0 +1,11 @@
+body{
+    background-color: #113e65;
+    color: white;
+}
+.header__logo{
+    background-image: url("../img/night.png");
+}
+.content__name{
+    color: black;
+    background-color: #9497ff;
+}

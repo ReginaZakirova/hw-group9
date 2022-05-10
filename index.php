@@ -1,20 +1,29 @@
 <!DOCTYPE html>
+<?php
+$cur_hour = date('H');
+//$cur_hour = 0;
+if ($cur_hour >= 8 && $cur_hour < 20)
+    $day_night_style="day";
+else
+    $day_night_style="night";
+?>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/<?php echo $day_night_style?>.css">
 </head>
 <body>
 <header>
-    <img class="logo__display" alt="Логотип" src="img/logo.png">
+    <div class="header__logo"></div>
     <div class="main-menu">
         <div class="menu-item">
-            <a class="menu-link" href="index.html">Главная</a>
+            <a class="menu-link" href="index.php">Главная</a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="table.html">Таблица Менделеева</a>
+            <a class="menu-link" href="table.php">Таблица Менделеева</a>
         </div>
     </div>
 </header>

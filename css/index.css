@@ -21,8 +21,6 @@ p{
 }
 .content__name{
     width: 100%;
-    color: white;
-    background-color: #113e65;
 }
 .content__info, .content__review{
     width: 50%;

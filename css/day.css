@@ -1,0 +1,11 @@
+body{
+    background-color: #bbcbe5;
+    color: black;
+}
+.header__logo{
+    background-image: url("../img/day.png");
+}
+.content__name{
+    color: white;
+    background-color: #113e65;
+}
