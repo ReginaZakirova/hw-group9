@@ -8,6 +8,9 @@
     <title>Таблица Менделеева</title>
 </head>
 <body>
+    <?php
+        require "header.php";
+    ?>
     <table>
         <caption align="center">Таблица менделеева</caption>
         <tr>
@@ -190,5 +193,8 @@
         </div>
         <span class="nameElement">Литий</span>
     </div>
+    <?php
+        require "footer.php";
+    ?>
 </body>
 </html>

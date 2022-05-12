@@ -14,24 +14,9 @@
     <title>Домашняя работа 1</title>
 </head>
 <body class="night">
-    <header class="page-header">
-        <nav>
-            <div class="mobilMenu" id="mobilMenu">м</div>
-            <ul class="nav-menu menuOpen" id="navMenu">
-                <li>
-                    <a href="Table.html" target="_blank" title="открыть таблицу">ссылка на таблицу</a>
-                </li>
-                <li>элемент меню 2
-                </li>
-                <li>элемент меню 3
-                </li>
-                <li>элемент меню 4
-                </li>
-            </ul>
-        </nav>
-        <div class="header-icon">
-        </div>
-    </header>
+    <?php
+        require "header.php";
+    ?>
     <main>
         <div class="main-iconConteiner">
             <div class="main-icon">
@@ -154,6 +139,9 @@
             </div>
         </div>
     </main>
+    <?php
+        require "footer.php";
+    ?>
     <script src="scripts/mobilBt.js"></script>
     <script src="scripts/night.js"></script>
 </body>
