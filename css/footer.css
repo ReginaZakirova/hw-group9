@@ -1,0 +1,29 @@
+footer{
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 0.1rem solid #eaebf3;
+}
+.footer__telegram_button, .footer__e-mail_button{
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    float: left;
+}
+.footer__telegram_button{
+    background-image: url("../img/ico/Telegram.png");
+}
+.footer__e-mail_button{
+    background-image: url("../img/ico/Mail.ru.png");
+}
+.float_left{
+    float: left;
+}
+.footer__flex_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.footer__flex_item{
+    padding-right: 10px;
+    padding-left: 5px;
+}

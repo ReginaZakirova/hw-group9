@@ -2,24 +2,15 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Главная</title>
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/index.css">
     <?php include 'php/day-night.php';?>
-    <link rel="stylesheet" href="css/<?php echo $day_night_style?>.css">
 </head>
 <body>
-<header>
-    <div class="header__logo"></div>
-    <div class="main-menu">
-        <div class="menu-item">
-            <a class="menu-link" href="index.php">Главная</a>
-        </div>
-        <div class="menu-item">
-            <a class="menu-link" href="table.php">Таблица Менделеева</a>
-        </div>
-    </div>
-</header>
+<?php require 'php/header.php';?>
 <main>
     <div class="photo">
         <img alt="Фотография" class="photo__img_width_100-percent" src="img/photo.jpg">
@@ -151,5 +142,6 @@
         </div>
     </div>
 </main>
+<?php require 'php/footer.php';?>
 </body>
 </html>

@@ -1,7 +1,10 @@
+<style>
 <?php
 $cur_hour = date('H');
-//$cur_hour = 0;
+//$cur_hour = 12;
 if ($cur_hour >= 8 && $cur_hour < 20)
-    $day_night_style="day";
+    include "css/day.css";
 else
-    $day_night_style="night";
+    include "css/night.css";
+?>
+</style>
