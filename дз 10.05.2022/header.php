@@ -16,12 +16,13 @@
                     <a href="index.php" target="_blank" title="открыть главную страницу">главная</a>
                 </li>
                 <li>
-                    <a href="tasks.php" target="_blank" title="открыть задачи">задачи php</a>
+                    <a href="tasks.php" target="_blank" title="открыть задачи">задачи циклы</a>
                 </li>
                 <li>
                     <a href="Table.php" target="_blank" title="открыть таблицу">ссылка на таблицу</a>
                 </li>
-                <li>элемент меню 4
+                <li>
+                    <a href="tasksArray.php" target="_blank" title="открыть задачи">задачи массивы</a>
                 </li>
             </ul>
         </nav>
