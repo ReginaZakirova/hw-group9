@@ -1,5 +1,5 @@
 window.onload = () =>{
-    document.querySelector('.lesson1').style.display='block';
+    document.querySelector('.lesson1').style.display='grid';
     let buttons = document.querySelectorAll("hedear>a");
     for (let button of buttons){
         button.onclick = 'changeWork';
@@ -11,5 +11,7 @@ function changeWork(){
     for (let div of divs){
         div.style.display = 'none';
     }
-    document.querySelector('.'+event.target.name).style.display='block';
+    let display = 'block';
+    if(event.target.name == "lesson1") display = 'grid';
+    document.querySelector('.'+event.target.name).style.display = display;
 }

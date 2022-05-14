@@ -3,41 +3,60 @@ body{
     width: 100%;
     margin: auto;
 }
+body *{
+    border-radius: 10px;
+}
 .header_day{
     height: 100px;
     width: 100%;
     background-color: #ff9800;
+    margin-bottom: 10px;
 }
 .header_night{
     height: 100px;
     width: 100%;
     background-color: midnightblue;
+    margin-bottom: 10px;
 }
 header>a{
     margin-right: 10px;
+    color: black;
 }
 header>a:hover{
     color: white;
     cursor: pointer;
-}
-main{
-    height: 80%;
-    position: absolute;
-    width: 100%;
-}
-.left, .fio, .infoAboutYourself, .review{
-    background-color: #ffc107;
 }
 .logo{
     height: 50%;
     padding-left: 10px;
     padding-top: 20px;
 }
+.soc_net_img{
+    height: 30%;
+    padding-left: 10px;
+    padding-top: 50px;
+}
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color: #ff9800;
+    margin-top: 10px;
+}
+main{
+    width: 100%;
+    min-height: 800px;
+}
+.lesson1{
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+}
+.left, .fio, .infoAboutYourself, .review{
+    background-color: #ffc107;
+}
+
 .left{
-    float: left;
-    width: 38%;
-    margin: 1%;
-    height: 100%;
+    width: 100%;
+    display: grid;
 }
 .photo{
     height: 94%;
@@ -45,9 +64,9 @@ main{
     width: 94%;
 }
 .right{
-    float: left;
-    width: 58%;
+    width: 98%;
     margin: 1%;
+    margin-top: 0px;
     text-align: center;
     height: 100%;
 }
@@ -60,20 +79,19 @@ h1{
     margin-top: 0px;
 }
 .infoAboutYourself, .review{
-    float: left;
     height: 100%;
 }
 .infoAboutYourself{
-    width: 58%;
+    width: 98%;
     margin-right: 2%;
 }
 .review{
-    width: 38%;
+    width: 98%;
     margin-left: 2%;
 }
 .info{
-    margin-top: 1%;
-    height: 89%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .textInfo{
     padding: 0px 10px 0px 10px;
@@ -84,6 +102,7 @@ td{
     border: solid 1px;
     width: 120px;
     height: 60px;
+    border-radius: 0px;
 }
 td>a{
     height: 60px;
@@ -185,7 +204,7 @@ td>div>b{
 .grid_vertical{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 700px 700px;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     background-color: darkgray;
