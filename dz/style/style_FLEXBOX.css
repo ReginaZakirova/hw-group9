@@ -27,7 +27,7 @@
     background-color: #86e2b6;
 }
 
-container {
+.container {
     display: flex;
     flex-direction: column;    /*указывает как элементы распологаются в контейнере row   column */
     flex-wrap: wrap;    /*вывод в одну строку или на несколько. wrap - расположение в нескольких линиях, wrap-reverse*/

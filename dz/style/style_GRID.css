@@ -4,6 +4,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr; /*отвечает за расположение элементов, 50px 50px 50px 50px 50px указываем размер каждой ячеки, */
     justify-content: space-evenly; 		      /* центрирование элементов*/
     margin: 50px;
+    background-color: #86e2b6;
 }
 .blok1 {
     background-color: blue;
@@ -35,7 +36,9 @@
     justify-content: space-evenly;   /*выравнивание блоков center - по центру, space-evenly вырвние по ширине с равными промежутками */
     /* grid-column-gap: 40px;           расстояние между колонками в гриде */
     gap: 40px;			    /* расстояние между КОЛОНКАМИ И СТРОЧКАМИ в гриде */
-    margin:40px;                    /*внешнее расстояние до блока */
+    margin-left:40px;                    /*слева внешнее расстояние до блока */
+    margin-right:40px;                    /*справа внешнее расстояние до блока */
+    margin-top:40px;                    /*сверхзу внешнее расстояние до блока */
     padding: 20px;                  /* внутриннее расстояние до блока*/
     background-color: #86e2b6;
     grid-template-areas:            /*выбираем расположение объектов в гриде */

@@ -9,27 +9,14 @@
 <title> Шондин А.С. </title>
 </head>
 <body>
-<header>
-  <!-- верхняя часть с логотипом -->
-<div class=blok-anketa">
-<!-- общий блок с анкетой-->
-<header>
-  <div class="blok_shapka">     <img class="logo" src="./images/logo.png" alt="Лого"> <div>
-</header>
-</header>
-<!-- nav - блок меню-->
-<nav>
-<div class="blok-menu">
-  <!-- меню брал от сюда https://dbmast.ru/files/responsive-menu/#-->
-  <nav class="nav">
-    <ul>
-      <li class="current"><a href="#">Главная</a></li>
-      <li><a href="./tablisa_mendeleeva.html">Таблица Менделеева</a></li>
-      <li><a href="#">пункт 3</a></li>
-    </ul>
-  </nav>
-  </nav>
-<di>
+  <!-- подключаем хеадер (верх сайта) -->
+<? 
+include 'bloki/header_verh_saita.php';    //подключаем хеадер (верх сайта)
+include 'bloki/menu.php';                 //подключаем меню
+?>
+
+
+  <main>
   <!-- main это основная часть -->
 <div class="podblok-grid">
 <div class="blok-photo">  <!-- блок сс фотографикй-->
@@ -52,88 +39,88 @@
     </p>
     <div class="blok-flex1">
       <div class="blok-flex2">
-        <container class="flex">
+        <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil1.png" alt="смайлик 1">
           </div>
           <div class="niz">
             Смайлик с шляпой
           </div>
-        </container>
+        </div>
       </div>
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil2.png" alt="смайлик 1">
           </div>
           <div class="niz">
             Смущающийся смайлик
           </div>
-        </container>
+        </div>
       </div>
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil3.png" alt="смайлик 1">
           </div>
           <div class="niz">
             удивленный смайлик
           </div>
-        </container>
+        </div>
       </div>
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil4.png" alt="смайлик 1">
           </div>
           <div class="niz">
             смеющийся смайлик
           </div>
-        </container>
+        </div>
       </div>
     </div>
   <h1>2 схема</h1>
     <div class ="blok-flex2-shema2">
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil1.png" alt="смайлик 1">
           </div>
           <div class="niz">
             Смайлик с шляпой
           </div>
-        </container>
+        </div>
       </div>
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil2.png" alt="смайлик 1">
           </div>
           <div class="niz">
             Смущающийся смайлик
           </div>
-        </container>
+        </div>
       </div>
       <div class="break"></div> <!--ПЕРЕНОС НА НОВУЮ СТРОКУ-->
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil3.png" alt="смайлик 1">
           </div>
           <div class="niz">
             удивленный смайлик
           </div>
-        </container>
+        </div>
       </div>
       <div class="blok-flex2">
-        <container class="flex">
+          <div class="container">
           <div class="verh">
             <img class="kartinka-verh " src="images/smil4.png" alt="смайлик 1">
           </div>
           <div class="niz">
             смеющийся смайлик
           </div>
-        </container>
+        </div>
       </div>
     </div>
   </div>
@@ -219,68 +206,10 @@
     </div>
   </div>
   </div>
-</div>
-    </div>
-    <?php
+      <!-- подключаем PHP с дневной и ночной темой -->
+      <?  include 'php/temi_noch_i_den.php';   ?>
 
-
-    $vremya_khasov= date('H'); // записываем в переменную $vremya_khasov количество часов
-    $vremya_khasov=$vremya_khasov+2; // Что бы время было по Магнитогорскому времени ( а не по Москве)
-    //    echo $vremya_khasov;
-    if ($vremya_khasov<19 and $vremya_khasov>7 ) {    // дневная тема
-//         echo "дневная тема";
-        echo "<style>
-        * {
-        color: #0e0101; /* Цвет символа */
-        }   
-        .blok_shapka {
-            background-color: #f5cf9f;
-        }
-        .blok-menu {
-        background-color: #e8bc81;
-        }
-        .podblok-grid {
-        background-color: #eadbb9;
-        }
-        a {
-        color: #69C;
-        }
-        .flex-grid {
-        background-color: #eadbb9;
-        }
-        </style>";
-    } else {                                          // ночная тема
-//         echo "ночная тема";
-        echo "<style>
-        * {
-        color: #fffcfc; /* Цвет символа */
-        }   
-        .blok_shapka {
-            background-color: black;
-        }
-                .blok-menu {
-        background-color: #5e5a59;
-        }
-                .podblok-grid {
-        background-color: #7b7a75;
-        }
-                a {
-        color: #a5caef;
-        }
-               .flex-grid {
-         background-color: #7b7a75;
-        }
-        </style>";
-
-    }
-    echo $a;
-    ?>
 </main>
-<footer>
-  <!-- подвал сайта -->
-</footer>
-
-
-
-
+  <!-- подключаем подвал сайта -->
+  <?  include 'bloki/footer_niz.php';   ?>
 </body>

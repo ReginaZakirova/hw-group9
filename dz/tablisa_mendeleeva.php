@@ -1,13 +1,21 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+﻿<!doctype html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style/style_tablisa_mendeleeva.css">
-  <title>Таблица Менделеева</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style_tablisa_mendeleeva.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- это для меню -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- от меню-->
+    <title>Таблица Менделеева</title>
 </head>
-
 <body>
+<!-- подключаем хеадер (верх сайта) -->
+<?
+include 'bloki/header_verh_saita.php';    //подключаем хеадер (верх сайта)
+include 'bloki/menu.php';                 //подключаем меню
+?>
+
+<div class="shablon_osnovnoy_blok_stranits">
+    <br> <br>
   <table>
     <tr>
       <td rowspan="2">Периоды</td>
@@ -215,6 +223,10 @@
       <td>10</td>
     </tr>
   </table>
+</div>
+<!-- подключаем PHP с дневной и ночной темой -->
+<?  include 'php/temi_noch_i_den.php';   ?>
+<!-- подключаем подвал сайта -->
+<?  include 'bloki/footer_niz.php';   ?>
 </body>
-
 </html>
