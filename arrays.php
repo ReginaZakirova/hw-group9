@@ -807,28 +807,112 @@
         echo "<br>Максимальное произведение в массиве №$array_number"
         ?>
     </p>
-    <!--<h3>Задача №20</h3>
+    <h3>Задача №20</h3>
     <p>
-        //Не доделал
         <?php
-/*        $skiers = [];
-        echo "<pre>";
+        $skiers = [];
         for ($start = 1; $start <= 7; $start++){
-            $position_array = [1, 2, 3, 4, 5, 6, 7, 8];
-            for ($skier = 1; $skier <= 8; $skier++){
-                do {
-                    $position = mt_rand(0, count($position_array) - 1);
-                } while (!isset($position_array[$position]));
-                $skiers[$skier][$start] = $position_array[$position];
-                unset($position_array[$position]);
-                print_r($position_array);
+            for ($position = 1; $position <= 8; $position++){
+                do{
+                    $skier = mt_rand(1, 8);
+                } while (isset($skiers[$skier][$start]));
+                $skiers[$skier][$start] = $position;
             }
         }
-        echo "Исходный массив:<br>";
+        echo "Места, занятые лыжниками:<br><pre>";
         print_r($skiers);
         echo "</pre><br>";
-        */?>
-    </p>-->
+        //Суммируем позиции
+        $sum = [];
+        foreach ($skiers as $skier => $starts){
+            foreach ($starts as $start => $position){
+                if (isset($sum[$skier])) {
+                    $sum[$skier] += $position;
+                }
+                else{
+                    $sum[$skier] = $position;
+                }
+            }
+        }
+        //Ищем минимум
+        $minimum = $sum[1];
+        foreach ($sum as $value){
+            if ($value < $minimum){
+                $minimum = $value;
+            }
+        }
+        //Определяем кандидатов на первое место
+        $contenders = [];
+        foreach ($sum as $skier => $value){
+            if ($value == $minimum){
+                $contenders[] = $skier;
+            }
+        }
+        echo "Претенденты на первое место: ";
+        //Определяем победителя
+        $minimum = $skiers[$contenders[0]][7];
+        $winner = $contenders[0];
+        foreach ($contenders as $skier){
+            echo "Лыжник №$skier, ";
+            if ($skiers[$skier][7] < $minimum){
+                $minimum = $skiers[$skier][7];
+                $winner = $skier;
+            }
+        }
+        echo "<br>Победил лыжник №$winner";
+        ?>
+    </p>
+    <h3>Задача №21</h3>
+    <p>
+        <?php
+        $sunny_days = [];
+        $distance = [];
+        $sum = [];
+        for ($resort = 1; $resort<=5; $resort++){
+            for ($year = 1; $year<=10; $year++){
+                $sunny_days[$resort][$year] = mt_rand(0, 365);
+                $distance[$resort] = mt_rand(0, 20000);
+                if (isset($sum[$resort])){
+                    $sum[$resort] += $sunny_days[$resort][$year];
+                }
+                else{
+                    $sum[$resort] = $sunny_days[$resort][$year];
+                }
+            }
+        }
+        echo "<pre>Количество солнечных дней:<br>";
+        print_r($sunny_days);
+        echo "Расстояние до курортов:<br>";
+        print_r($distance);
+        echo "</pre><br>";
+        //Определяем максимум
+        $maximum = $sum[1];
+        foreach ($sum as $value){
+            if ($value > $maximum){
+                $maximum = $value;
+            }
+        }
+        //Определяем претендентов
+        $contenders = [];
+        foreach ($sum as $resort => $value){
+            if ($value == $maximum){
+                $contenders[] = $resort;
+            }
+        }
+        echo "Претенденты на первое место: ";
+        //Определяем победителя
+        $minimum = $distance[$contenders[0]];
+        $winner = $contenders[0];
+        foreach ($contenders as $resort){
+            echo "курорт №$resort, ";
+            if ($minimum > $distance[$resort]){
+                $minimum = $distance[$resort];
+                $winner = $resort;
+            }
+        }
+        echo "<br>Ближе всех из них: курорт №$winner";
+        ?>
+    </p>
     <h3>Задача №22</h3>
     <p>
         <?php
@@ -858,6 +942,108 @@
             }
         }
         echo "</pre><br>Автомобиль №$car_number проехал больше всех: $maximum км.";
+        ?>
+    </p>
+    <h3>Задача №23</h3>
+    <p>
+        <?php
+        $production =[];
+        $sum = [];
+        for ($worker = 1; $worker <= 8; $worker++){
+            for ($day = 1; $day <= 5; $day++){
+                $production[$worker][$day] = mt_rand(0, 10);
+                if (isset($sum[$worker])){
+                  $sum[$worker] += $production[$worker][$day];
+                }
+                else{
+                    $sum[$worker] = $production[$worker][$day];
+                }
+            }
+        }
+        echo "Производство деталей:<br><pre>";
+        print_r($production);
+        echo "</pre><br>";
+        $maximum = 0;
+        foreach ($sum as $value){
+            if ($value > $maximum){
+                $maximum = $value;
+            }
+        }
+        echo "Рабочие, кот. произвели наибольшее кол-во деталей ($maximum): ";
+        foreach ($sum as $worker => $value){
+            if ($value == $maximum){
+                echo "рабочий №$worker, ";
+            }
+        }
+        ?>
+    </p>
+    <h3>Задача №24</h3>
+    <p>
+        <?php
+        $house = [];
+        $sum = [];
+        for ($floor = 1; $floor <= 3; $floor++){
+            for ($room = 1; $room <= 6; $room++){
+                //Размеры в мм
+                $house[$floor][$room]["width"] = mt_rand(1000, 5000);
+                $house[$floor][$room]["length"] = mt_rand(1000, 5000);
+                $area = $house[$floor][$room]["width"] * $house[$floor][$room]["length"];
+                if (isset($sum[$floor])){
+                    $sum[$floor] += $area;
+                }
+                else{
+                    $sum[$floor] = $area;
+                }
+            }
+        }
+        echo "Размеры комнат в доме:<br><pre>";
+        print_r($house);
+        echo "</pre><br>";
+        $minimum = $sum[1];
+        foreach ($sum as $value){
+            if ($value < $minimum){
+                $minimum = $value;
+            }
+        }
+        echo "Этажи с минимальной жилой площадью ($minimum): ";
+        foreach ($sum as $floor => $value){
+            if ($value == $minimum){
+                echo "этаж №$floor, ";
+            }
+        }
+        ?>
+    </p>
+    <h3>Задача №25</h3>
+    <p>
+        <?php
+        $exams = [];
+        $sum = [];
+        for ($student = 1; $student <= 20; $student++){
+            for ($subject = 1; $subject <=4; $subject++){
+                $exams[$student][$subject] = mt_rand(2, 5);
+                if (isset($sum[$subject])){
+                    $sum[$subject] += $exams[$student][$subject];
+                }
+                else{
+                    $sum[$subject] = $exams[$student][$subject];
+                }
+            }
+        }
+        echo "Результаты экзаменов:<br><pre>";
+        print_r($exams);
+        echo "</pre><br>";
+        $maximum = $sum[1];
+        foreach ($sum as $value){
+            if ($value > $maximum){
+                $maximum = $value;
+            }
+        }
+        echo "Максимальный средний бал (" . $maximum / count($exams) . ") получен по: ";
+        foreach ($sum as $subject => $value){
+            if ($value == $maximum){
+                echo "предмету №$subject, ";
+            }
+        }
         ?>
     </p>
 </main>
