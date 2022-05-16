@@ -20,6 +20,9 @@
         <div class="menu-item">
             <a class="menu-link" href="cycles.php">Циклы</a>
         </div>
+        <div class="menu-item">
+            <a class="menu-link" href="arrays.php">Массивы</a>
+        </div>
     </div>
 </header>
 </html>
