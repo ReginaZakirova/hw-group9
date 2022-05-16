@@ -1,0 +1,53 @@
+div{
+	height: 125px;
+}
+p{
+	padding: 0;
+	margin: 0;
+}
+.name, .symbol p{
+	font-family: georgia;
+}
+.number, .mass{
+	text-align: left;
+	align-self: start;
+}
+.symbol, .name{
+	text-align: right;	
+	align-self: start;
+}
+.number{
+	grid-area: num;
+	font-size: 120px;
+	font-weight:bold;
+}
+.symbol{
+	grid-area: sym;
+	font-size: 250px;
+  	align-self: top;
+  	font-weight:bold;
+}
+.mass{
+	grid-area: mas;
+	font-size: 120px;
+}
+.name{
+	grid-area: nam;
+	font-size: 120px;
+
+}
+.container {
+	background-color: #96d1e2;
+	border: 1px solid black;
+	width: 1000px;
+	height: 500px;
+	display: grid;
+	grid-template-columns:repeat(4, 250px);
+	/*grid-auto-rows: minmax(125px, auto);*/
+	grid-template-rows:repeat(4, 125px);
+	grid-template-areas:
+		'num num sym sym'
+		'mas mas sym sym'
+		'. . . .'
+		'nam nam nam nam';
+}

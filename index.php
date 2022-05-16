@@ -12,28 +12,10 @@
 	<?php
 		include "scripts\day_night.php";
 	?>
-	<section class="grid-header">
-		<div class="menu">
-			<div class="menu-el">
-				<a href="table.html" target="_blank">Таблица Менделеева</a>
-			</div>
-			<div class="menu-el">
-				<a href="forms.html" target="_blank">работа с формами</a>
-			</div>
-			<div class="menu-el">
-				<a href="">next_task3</a>
-			</div>
-			<div class="menu-el">
-				<a href="">next_task4</a>
-			</div>
-		</div>
-		<div class="times">	
-		</div>	
-		<div class="logo">
-			<img class="img-logo" src="images/logo.png">
-		</div>
-	</section>
 	<main class="main">
+		<?
+			require_once "inc/header.php";
+	    ?>
 		<div class="kvazi-body">	
 			<div class="foto">
 				<img class="img-me" src="images/me.jpg">
@@ -222,10 +204,8 @@
 		</div>
 	</section>
 	</main>
-	<section class="grid-footer">
-		<div class="grid-div-footer">
-			<h1 class="h1-footer">Footer</h1>
-		</div>
-	</section>
+	<?
+		require_once "inc/footer.php";
+	?>
 </body>
 </html>
