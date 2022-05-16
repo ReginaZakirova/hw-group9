@@ -37,13 +37,13 @@ td {
     background-color: #fff401;
 }
 
-td.yellow div.container, td.blue div.container {
+td.yellow div.container_mendeleeva, td.blue div.container_mendeleeva {
     display: flex;
     justify-content: space-between;
     height: 18px;
 }
 
-td.blue div.container {
+td.blue div.container_mendeleeva {
     flex-direction: row-reverse;
 }
 
@@ -73,7 +73,7 @@ td.yellow span.number, td.blue span.number {
     font-weight: bold;
 }
 
-td.red div.container {
+td.red div.container_mendeleeva {
     width: 48%;
     float:right;
     text-align: right;

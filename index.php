@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Домашняя страница</title>
-    <link href="css/styles.css" rel="stylesheet">
-    <?php
-        if(date("H") >= 20 || date("H") < 8) # в интервале c 20 до 8 утра подключаем ночные стили (меняем цвет фона и заголовков)
-        {
-            echo '<link href="css/night_styles.css" rel="stylesheet">';
-        }
-    ?>
-</head>
-<body>
+<?php require_once 'header.php'; ?>
+
+
 
 <section class="main_container">
-    <div class="main_header"><img src="images/logo.png"></div>
     <div class="main_menu">
-        <div class="razdel"><a href="#" target="_blank">Главная</a></div>
-        <div class="razdel"><a href="table.html" target="_blank">Таблица Менделеева</a></div>
+        <div class="razdel"><a href="index.php">Главная</a></div>
+        <div class="razdel"><a href="table.php">Таблица Менделеева</a></div>
+        <div class="razdel"><a href="cikl.php">Циклы</a></div>
     </div>
     <div class="about">
         <div class="main_photo">
@@ -100,6 +89,4 @@
     </div>
 </div>
 
-
-</body>
-</html>
+<?php require_once 'footer.php'; ?>
