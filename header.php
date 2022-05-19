@@ -19,8 +19,10 @@ else $background_color = 'header_day';
 <body>
     <header class="<? echo $background_color; ?>">
         <img class="logo" src="/img/149452.png">
-        <a name="lesson1" href="/index.php">О себе</a>
-        <a name="lesson2" href="/tableofMendeleev.php">Таблица Менделеева</a>
-        <a name="lesson3" href="/flexandgrid.php">Флексы и Гриды</a>
-        <a name="cycles" href="/cycles/cycles.php">Циклы</a>
+        <a href="/index.php">О себе</a>
+        <a href="/tableofMendeleev.php">Таблица Менделеева</a>
+        <a href="/flexandgrid.php">Флексы и Гриды</a>
+        <a href="/cycles/cycles.php">Циклы</a>
+        <a href="/arrays/arrays.php">Массивы</a>
+        <a href="/strings/strings.php">Строки</a>
     </header>
