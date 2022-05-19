@@ -1,14 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>footer</title>
-    <link rel="stylesheet" href="css/footer.css">
-</head>
+<?php
+$vowel_chars = ['а','у','о','ы','и','э','я','ю','ё','е'];
+$page_list = ['index.php', 'php/header.php', 'php/footer.php'];
+$text = "";
+foreach ($page_list as $page) {
+    $arr = token_get_all(file_get_contents($page));
+    foreach ($arr as $value){
+        //Включаем в результирующую строку T_INLINE_HTML и T_CONSTANT_ENCAPSED_STRING и исключаем ссылки на *.php
+        if (($value[0] == 318 || $value[0] == 320) && isset($value[1]) && substr($value[1], -4, 3) != "php" ){
+            $text .= strip_tags($value[1]);
+        }
+    }
+}
+$vowel_count = 0;
+foreach (mb_str_split($text, 1) as $value){
+    if (in_array($value, $vowel_chars)){
+        $vowel_count++;
+    }
+}
+$words_count = substr_count($text, ' ') + 1;
+?>
 <footer class="footer__flex_container">
+    <div class="footer__flex_item">
+        <?php echo "На главной странице: $words_count слов и $vowel_count гласных";?>
+    </div>
     <div class="footer__flex_item">
         © Константин Никитин, 2022
     </div>
@@ -25,4 +39,3 @@
         </a>
     </div>
 </footer>
-</html>

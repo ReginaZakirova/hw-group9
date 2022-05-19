@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Таблица менделеева</title>
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
 </head>
 <body>

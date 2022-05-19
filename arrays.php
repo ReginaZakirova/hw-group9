@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Массивы</title>
     <link rel="stylesheet" href="css/cycles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
 </head>
 <body>

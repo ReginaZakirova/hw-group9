@@ -40,6 +40,12 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.color_first{
+    color: darkgoldenrod;
+}
+.color_second{
+    color: #308586;
+}
 @media print{
     body{
         background-color: white;
