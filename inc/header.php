@@ -7,7 +7,8 @@
 			<a href="forms.html" target="_blank">работа с формами</a>
 		</div>
 		<div class="menu-el">
-			<a href="cycles.php" title="циклы" target="_blank">циклы</a>
+			<a href="cycles.php" title="циклы" target="_blank">циклы</a><br>
+			<a href="massiv.php" title="массивы" target="_blank">массивы</a>
 		</div>
 		<div class="menu-el">
 			<a href="">next_task4</a>
