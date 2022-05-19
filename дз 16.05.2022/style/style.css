@@ -237,6 +237,10 @@ span {
 
 }
 
+.replace {
+    color: red;
+}
+
 @media screen and (max-width: 1150px) 
 {
     .text-infMy, .text-feedback {
