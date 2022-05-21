@@ -1,10 +1,14 @@
 <?php
+
+function smena_dnya_i_nochi ()
+{
+
 $vremya_khasov= date('H'); // записываем в переменную $vremya_khasov количество часов
 $vremya_khasov=$vremya_khasov+2; // Что бы время было по Магнитогорскому времени ( а не по Москве)
 //    echo $vremya_khasov;
 if ($vremya_khasov<19 and $vremya_khasov>7 ) {    // дневная тема
 //         echo "дневная тема";
-    echo "<style>
+    $den_ili_noch= "<style>
         .blok-name,.blok-info, .blok-otziv, .flex-grid, .blok-menu {
         color: #0e0101; /* Цвет символа */
         }   
@@ -32,7 +36,7 @@ if ($vremya_khasov<19 and $vremya_khasov>7 ) {    // дневная тема
         </style>";
 } else {                                          // ночная тема
 //         echo "ночная тема";
-    echo "<style>
+    $den_ili_noch= "<style>
         .blok-name,.blok-info, .blok-otziv, .flex-grid, .blok-menu {
         color: #fffcfc; /* Цвет символа */
         }   
@@ -59,4 +63,9 @@ if ($vremya_khasov<19 and $vremya_khasov>7 ) {    // дневная тема
                 }
         </style>";
 }
+
+    return $den_ili_noch;
+
+}
+
 ?>

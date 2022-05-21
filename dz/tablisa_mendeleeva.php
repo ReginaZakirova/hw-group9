@@ -227,6 +227,10 @@ include 'bloki/menu.php';                 //подключаем меню
 <!-- подключаем PHP с дневной и ночной темой -->
 <?  include 'php/temi_noch_i_den.php';   ?>
 <!-- подключаем подвал сайта -->
-<?  include 'bloki/footer_niz.php';   ?>
+<?  include 'bloki/footer_niz.php';
+include_once 'php/temi_noch_i_den.php';               // подключаем PHP с дневной и ночной темой
+$den_ili_noch = smena_dnya_i_nochi();                 //запускаем фукнцию по смене дня и ночи
+echo  $den_ili_noch;
+?>
 </body>
 </html>

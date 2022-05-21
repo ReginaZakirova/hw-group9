@@ -15,7 +15,6 @@
 ?>
     <main>
   <!-- main это основная часть -->
-
         <style>.shablon_osnovnoy_blok_stranits{
                 margin-left:70px;
             }</style>
@@ -23,13 +22,47 @@
             <div class="shablon_osnovnoy_blok_stranits">
         <?
 
+        //=============фунукция формирует рандомное число для задач №9 и 12=============
+        function randonoe_khislo ()
+        {
+            $a=mt_rand(100,999999);
+
+            return $a;
+        }
+        //============= функция для задачи 3=============
+        function rezdeliaem ($per)
+        {
+            FOR ($i = 1; $i<50; $i++) {
+                $per=$per+3;
+                $tselaya[$i]=$per;
+            }
+
+            return $tselaya;
+        }
+// решение через for для задачи 3
+        function zavisimost ($u)
+        {
+            switch ($u) {   // свич это множественный выбор
+                case 0: $kolvo_sifr=11;break;
+                case 1: $kolvo_sifr=10;break;
+                case 2: $kolvo_sifr=9;break;
+                case 3: $kolvo_sifr=8;break;
+                case 4: $kolvo_sifr=7;break;
+                case 5: $kolvo_sifr=6;break;
+                case 6: $kolvo_sifr=5;break;
+                case 7: $kolvo_sifr=4;break;
+                case 8: $kolvo_sifr=3;break;
+                case 9: $kolvo_sifr=2;break;
+                case 10: $kolvo_sifr=1;break;
+            }
+            return $kolvo_sifr;
+        }
+
+
 // ----------------- 1 задача
         echo "<br><h2>Обязательная часть</h2>  <b>Здача 1.</b> (презентация урок 3-4), 19 слайд, №4<br>";
         $per= -2;
-        FOR ($i = 1; $i<50; $i++) {
-            $per=$per+3;
-            $tselaya[$i]=$per;
-        }
+        $tselaya=rezdeliaem ($per);
         FOR ($i=1; $i<50;$i++) {
             $drobn[$i] = $i;
         }
@@ -86,21 +119,8 @@
 //    echo "<br>проверка ".$massiv[$i];
         }
         // делаем зависимость количества элементов массива от введенного числа
-        switch ($u) {   // свич это множественный выбор
-            case 0: $kolvo_sifr=11;break;
-            case 1: $kolvo_sifr=10;break;
-            case 2: $kolvo_sifr=9;break;
-            case 3: $kolvo_sifr=8;break;
-            case 4: $kolvo_sifr=7;break;
-            case 5: $kolvo_sifr=6;break;
-            case 6: $kolvo_sifr=5;break;
-            case 7: $kolvo_sifr=4;break;
-            case 8: $kolvo_sifr=3;break;
-            case 9: $kolvo_sifr=2;break;
-            case 10: $kolvo_sifr=1;break;
-        }
+            $kolvo_sifr=zavisimost ($u);
         // Что бы сообщения не выводились до нажатия кнопки.
-
             if ((11<$u) or($u<0)) {
             echo "<br>Введено не верное число, пожалуйста введите число от 1 до 10";
         }else{
@@ -139,7 +159,7 @@
         // -----------------  КОНЕЦ  ВАРИАТИВНАЯ ЧАСТЬ  задача 5
         // ----------------- ЗАДАЧА 9*
         echo "<br><br><b>Задача 9*</b><br>";
-        $khislo=mt_rand(100,999999);
+        $khislo=randonoe_khislo ($stroka);
         //$khislo=15656;
         $kolvo_znakov=iconv_strlen($khislo); // записываем количество знаков в числе
         echo "<br> Рандомно получили число: ".$khislo." <br> Количество знаков в строке = ".$kolvo_znakov;
@@ -160,7 +180,7 @@
         // КОНЕЦ ЗАДАЧИ 9*=============
         //----------------- Задача 12*
         echo "<br><br><b>Задача 12*</b><br>";
-        $khislo=mt_rand(100,999999);
+        $khislo=randonoe_khislo ();
         //$khislo=15656;
         $kolvo_znakov=iconv_strlen($khislo); // записываем количество знаков в числе
         echo "<br> Рандомно получили число: ".$khislo;
@@ -183,7 +203,6 @@
             }
         }
         echo "<br>Произведение всех нечетных знаков числа: ". $proizveden_12;
-
         //----------------- Конец задачи12*
         ?>
 
@@ -198,5 +217,10 @@
 
 </main>
   <!-- подключаем подвал сайта -->
-  <?  include 'bloki/footer_niz.php';   ?>
+  <?  include 'bloki/footer_niz.php';
+  include_once 'php/temi_noch_i_den.php';               // подключаем PHP с дневной и ночной темой
+  $den_ili_noch = smena_dnya_i_nochi();                 //запускаем фукнцию по смене дня и ночи
+  echo  $den_ili_noch;
+  ?>
+
 </body>

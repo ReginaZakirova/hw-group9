@@ -1,7 +1,6 @@
 <!-- подвал сайта -->
 <footer>
     <div class="footer1">
-
         <br> <br>
         <ul class="social-icons-5">
             <li><a href="https://vk.com/a.shondin"><i class="fa fa-vk"></i></a></li>

@@ -1,5 +1,19 @@
     <div class="footer1">
 	<?
+// Функция для перебора количества гласных букв и их подсчётав, $kol_vo_glasnih_bukv=0, РОВНЯЕТСЯ 0 ТОЛЬКО ЕСЛИ не определена (в первый раз)
+    function podscet_glanih ($bukvy_slova,$u, $kol_vo_glasnih_bukv=0)
+    {
+        $glsnie = array('a', 'e', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я');
+        for ($o = -1; $o < count($glsnie ); $o++) {  // для перебора ГЛАСНЫХ и проверки
+            if ($bukvy_slova[$u]===$glsnie[$o] and $bukvy_slova[$u]!==NULL){
+                $kol_vo_glasnih_bukv= $kol_vo_glasnih_bukv+1;
+                //    echo "<br> Это гласня буква " . $glsnie[$o];
+            }
+        }
+        return $kol_vo_glasnih_bukv;
+    }
+
+    // echo "<br>Количество слов в строке ".$a;
 
         // считаем количество слов на странице
         $kol_vo_slov_na_stranitse=0;
@@ -15,13 +29,7 @@
                     // $bukvy_slova=str_split($massiv_slov[$j]);       // массив где содержатся б
                     For ($u=-1;$u<count($bukvy_slova);$u++) {  // тут перебираем буквы слов
                         //  echo "<br>".iconv("UTF-8", "windows-1251", $bukvy_slova[$u]);
-                        $glsnie = array('a', 'e', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я');
-                        for ($o = -1; $o < count($glsnie ); $o++) {  // для перебора ГЛАСНЫХ и проверки
-                            if ($bukvy_slova[$u]===$glsnie[$o] and $bukvy_slova[$u]!==NULL){
-                                $kol_vo_glasnih_bukv= $kol_vo_glasnih_bukv+1;
-                                //    echo "<br> Это гласня буква " . $glsnie[$o];
-                            }
-                        }
+                        $kol_vo_glasnih_bukv=podscet_glanih ($bukvy_slova,$u,$kol_vo_glasnih_bukv); // вызов функции для подсчута гласных букв
                     }
                 }
             }
@@ -33,6 +41,5 @@
         $kones = strtotime(date("d-m-Y"));
         $datediff = $kones - $nachalo;
         echo "Количество дней между текущей датой и датой рождения = " . round($datediff / (60 * 60 * 24)); //делим нк количество секунд в день
-
         ?>
 		</div>
