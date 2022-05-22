@@ -29,5 +29,6 @@
         <div class="header-icon">
         </div>
     </header>
+    <script src="scripts/mobilBt.js"></script>
 </body>
 </html>
