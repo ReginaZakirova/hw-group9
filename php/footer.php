@@ -11,6 +11,9 @@ foreach ($page_list as $page) {
         }
     }
 }
+while(str_contains($text, "  ")){
+    $text = str_replace("  ", " ", $text);
+}
 $vowel_count = 0;
 foreach (mb_str_split($text, 1) as $value){
     if (in_array($value, $vowel_chars)){
