@@ -1,3 +1,6 @@
+<?
+header('Content-Type: text/css');
+?>
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,10 +15,10 @@
 }
 h1{
 	text-align: center;
-	color: white;
+	color: grey;
 }
 p{
-	color: #aaa1ad;	
+	color: #aaa1ad;
 }
 .foto{
 	grid-row: 1/4;
@@ -147,10 +150,10 @@ justify-content: center;
 .copyright{
 	margin: auto;
 }
-.copyright h1{
+.copyright p{
 	text-align: center;
 	color: black;
-	font-size: 16pt;
+	font-size: 10pt;
 }
 .social{
 	display: grid;
@@ -292,4 +295,8 @@ justify-content: center;
 		font-size: 14pt;
 	}
 }
-
+/*task1*/
+<? $color_1 = dechex(mt_rand()); ?>
+.task1{
+ color: <? echo'#'.$color_1; ?>;
+}

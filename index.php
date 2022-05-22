@@ -5,12 +5,12 @@
 	<meta name="keywords" content="Шамиль Салимов, обо мне">
 	<meta name="description" content="Личная страница">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles.php">
 	<title>Шамиль Салимов</title>
 </head>
 <body>
 	<?php
-		include "scripts\day_night.php";
+		include_once "scripts\day_night.php";
 	?>
 	<main class="main">
 		<?
@@ -22,10 +22,27 @@
 			</div>
 				<div class="fio"><h1>Салимов Шамиль Равилевич</h1></div>
 			<div class="about-me">
-					<p>Приветсвую. Окончил МГТУ им. Носова, направление "Электроника и микроэлектроника". Работаю системным администратором в одной из частных оганизаций города. Решил направить свои усилия на изучение веб-программирования, так как данная отрасль интересна и постоянно развивается, а специалисты востребованы.</p>
+					<p><span class ="task1">Приветсвую, окончил МГТУ им. Носова, направление "Электроника и микроэлектроника.</span> Работаю системным администратором в одной из частных оганизаций города. Решил направить свои усилия на изучение веб-программирования, так как данная отрасль интересна и постоянно развивается, а специалисты востребованы.</p>
 			</div>
 			<div class="impres">
-				<p>Впечатления от первого занятия положительные, всё понравилось!</p>
+				<p><? $str1 = 'Впечатления от первого занятия положительные, всё понравилось!';
+				function task12(string $str){
+					$arr = explode(' ', $str);
+					for ($i=0; $i < count($arr); $i++) { 
+						if ($i%2 != 0) {
+							echo "<span style='color: blue'> $arr[$i]</span>" ;
+						}
+						elseif ($i%2== 0){
+							echo "<span style='color: green'> $arr[$i]</span>" ;
+						}
+						else{
+							echo $arr[$i];	
+						}
+					}
+				}
+				task12($str1);
+			?>	
+			</p>
 			</div>	
 		</div>
 	<section class="flex-container1">

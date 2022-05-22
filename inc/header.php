@@ -11,7 +11,8 @@
 			<a href="massiv.php" title="массивы" target="_blank">массивы</a>
 		</div>
 		<div class="menu-el">
-			<a href="">next_task4</a>
+			<a href="strings.php" title="строки" target="_blank">строки</a><br>
+			<a href="functions.php" title="функции" target="_blank">функции</a>
 		</div>
 	</div>
 	<div class="times">	
