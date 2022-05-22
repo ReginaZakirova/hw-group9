@@ -1,4 +1,23 @@
 <? require_once($_SERVER['DOCUMENT_ROOT'].'/header.php'); ?>
+<?
+    function rand_arrays(int $N){
+        $arr = [];
+        for($i=1; $i<=$N; $i++){
+            $arr[] = mt_rand(-100,100);
+        }
+        return $arr;
+    }
+
+    function ishod_array(int $first,int $second,int $min, int $max){
+        for($i=0;$i<$first;$i++){
+            for($j=0;$j<$second;$j++){
+                $arr[$i][$j] = mt_rand($min , $max);
+                echo $arr[$i][$j]." ";
+            }
+            echo '<br>';
+        }
+    }
+?>
 <style>
 p{
     font-size:larger;
@@ -33,7 +52,7 @@ main img{
             Необходимо вывести массив, заполненный случайными числами. После чего вывести данный массив в противоположном порядке.</p>
         <p>Ответ:<br> 
         <?  
-            $arr2 = [mt_rand(),mt_rand(),mt_rand(),mt_rand(),mt_rand(),mt_rand()];
+            $arr2 = rand_arrays(10);
             foreach($arr2 as $item){
                 echo $item.' ';
             }
@@ -59,13 +78,9 @@ main img{
         <p>Задание 4</p>
         <p>Дано N действительных случайных чисел в диапазоне от -100 до 100.<br>
             Найти минимальное положительное число и максимальное отрицательное число.</p>
-        <p>Ответ: (N=7)<br> 
+        <p>Ответ: (N=10)<br> 
         <?  
-            $N = 7;
-            $arr4=[];
-            for($i=1; $i<=$N; $i++){
-                $arr4[] = mt_rand(-100,100);
-            }
+            $arr4=rand_arrays(10);
             $min_pol = 100;
             $max_otric = -100;
             foreach($arr4 as $value){
@@ -144,15 +159,8 @@ main img{
             Определить для каждого четного столбца максимальный элемент. Найти произведение этих элементов.</p>
         <p>Ответ: <br> 
         <?  
-        $arr = [];
         echo "Исходный массив:<br>";
-            for($i=0;$i<5;$i++){
-                for($j=0;$j<6;$j++){
-                    $arr[$i][$j] = mt_rand(1,100);
-                    echo $arr[$i][$j]." ";
-                }
-                echo '<br>';
-            }
+        $arr = ishod_array(5,6,1,100);
         $max_arr=[];
         $sum=1;
         for($i=1; $i<6;){
@@ -341,16 +349,9 @@ main img{
         Определить для каждой вложенного массива минимальный элемент. Среди этих элементов найти максимальный</p>
         <p>Ответ:<br> 
         <?  
-        $arr = [];
         $max = 0;
         echo "Исходный массив:<br>";
-            for($i=0;$i<5;$i++){
-                for($j=0;$j<6;$j++){
-                    $arr[$i][$j] = mt_rand(1,100);
-                    echo $arr[$i][$j]." ";
-                }
-                echo '<br>';
-            }
+        $arr = ishod_array(5,6,1,100);
         for($i=0; $i<5;$i++){
             $min = 100;
             for($j=0; $j<6;$j++){
@@ -373,17 +374,10 @@ main img{
         Определить, какой рабочий произвел максимальное количество деталей. Если таких несколько, то вывести хотя бы одного из них.</p>
         <p>Ответ:<br> 
         <?  
-        $arr = [];
         $max = 0;
         $num_employee;
         echo "Исходный массив:<br>";
-            for($i=0;$i<8;$i++){
-                for($j=0;$j<5;$j++){
-                    $arr[$i][$j] = mt_rand(1,100);
-                    echo $arr[$i][$j]." ";
-                }
-                echo '<br>';
-            }
+        $arr = ishod_array(8,5,1,100);
             for($i=0; $i<8;$i++){
                 $sum = 0;
                 for($j=0; $j<5;$j++){

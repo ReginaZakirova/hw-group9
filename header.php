@@ -1,7 +1,7 @@
 <?
-function pre($data){
+function pre($array){
     echo "<pre>";
-    print_r($data);
+    print_r($array);
     echo "</pre>";
 }
 $time = new DateTime();
@@ -25,4 +25,5 @@ else $background_color = 'header_day';
         <a href="/cycles/cycles.php">Циклы</a>
         <a href="/arrays/arrays.php">Массивы</a>
         <a href="/strings/strings.php">Строки</a>
+        <a href="/functions/functions.php">Функции</a>
     </header>
