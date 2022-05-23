@@ -14,15 +14,7 @@
     {
         $arr = [];
         for ($i = $start; $i <= $start + $length - 1; $i++){
-            $arr[$i] = mt_rand($min, $max);
-        }
-        return $arr;
-    }
-    function fill_array_float($start, $length, $min = 0, $max = 100): array
-    {
-        $arr = [];
-        for ($i = $start; $i <= $start + $length - 1; $i++){
-            $arr[$i] = mt_rand($min, $max) + lcg_value() - 1;
+            $arr[$i] = mt_rand($min, $max) + ((gettype($max) == "double") ? lcg_value() - 1 : 0);
         }
         return $arr;
     }
@@ -388,7 +380,7 @@
     <p>
         <?php
         $n = mt_rand(10, 20);
-        $arr = fill_array_float(0, $n, -4, 8);
+        $arr = fill_array(0, $n, -4, 8.0);
         echo "Исходный массив:<br>";
         pre($arr);
         echo "<br>Сортированный массив:<br>";
@@ -404,7 +396,7 @@
     <p>
         <?php
         $n = mt_rand(10, 20);
-        $arr = fill_array_float(0, $n, 11, 22);
+        $arr = fill_array(0, $n, 11, 22.0);
         echo "Исходный массив:<br>";
         pre($arr);
         $A = mt_rand(11, 22);
@@ -422,7 +414,7 @@
     <p>
         <?php
         $n = mt_rand(10, 20);
-        $arr = fill_array_float(0, $n, -5, 5);
+        $arr = fill_array(0, $n, -5, 5.0);
         echo "Исходный массив:<br>";
         pre($arr);
         echo "<br>Сортированный массив из отрицательных элементов:<br>";
@@ -437,7 +429,7 @@
     <h3>Задача №7</h3>
     <p>
         <?php
-        $arr = fill_array_float(0, 100, -35, 50);
+        $arr = fill_array(0, 100, -35, 50.0);
         echo "Исходный массив:<br>";
         pre($arr);
         $X = mt_rand(1, 49);
@@ -484,7 +476,7 @@
     <h3>Задача №9</h3>
     <p>
         <?php
-        $arr = fill_array_float(0, 100, 3, 35);
+        $arr = fill_array(0, 100, 3, 35.0);
         echo "Исходный массив:<br>";
         pre($arr);
         echo "<br>Сортированный массив:<br>";
@@ -500,7 +492,7 @@
     <p>
         <?php
         $n = mt_rand(5, 10);
-        $arr = fill_array_float(0, $n, 2, 10);
+        $arr = fill_array(0, $n, 2, 10.0);
         echo "Исходный массив:<br>";
         pre($arr);
         echo "<br>";
@@ -525,7 +517,7 @@
     <p>
         <?php
         $n = mt_rand(5, 10);
-        $arr = fill_array_float(0, $n, 3, 10);
+        $arr = fill_array(0, $n, 3, 10.0);
         $sum = sum_array($arr);
         echo "Исходный массив:<br>";
         pre($arr);
