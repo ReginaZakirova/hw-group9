@@ -1,5 +1,25 @@
 <?php
-$vowel_chars = ['а','у','о','ы','и','э','я','ю','ё','е'];
+function clear_text($text){
+    while(str_contains($text, "  ")){
+        $text = str_replace("  ", " ", $text);
+    }
+    return str_replace(['"', "'", '.', ',', '!', '?'], "", $text);
+}
+function word_count($text): int
+{
+    return substr_count(clear_text($text), ' ') + 1;
+}
+function vowel_count($text): int
+{
+    $vowel_chars = ['а','у','о','ы','и','э','я','ю','ё','е'];
+    $vowel_count = 0;
+    foreach (mb_str_split(clear_text($text), 1) as $value){
+        if (in_array($value, $vowel_chars)){
+            $vowel_count++;
+        }
+    }
+    return $vowel_count;
+}
 $page_list = ['index.php', 'php/header.php', 'php/footer.php'];
 $text = "";
 foreach ($page_list as $page) {
@@ -11,16 +31,8 @@ foreach ($page_list as $page) {
         }
     }
 }
-while(str_contains($text, "  ")){
-    $text = str_replace("  ", " ", $text);
-}
-$vowel_count = 0;
-foreach (mb_str_split($text, 1) as $value){
-    if (in_array($value, $vowel_chars)){
-        $vowel_count++;
-    }
-}
-$words_count = substr_count($text, ' ') + 1;
+$vowel_count = vowel_count($text);
+$words_count = word_count($text);
 ?>
 <footer class="footer__flex_container">
     <div class="footer__flex_item">

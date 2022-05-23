@@ -13,5 +13,8 @@
         <div class="menu-item">
             <a class="menu-link" href="arrays.php">Массивы</a>
         </div>
+        <div class="menu-item">
+            <a class="menu-link" href="extra_task.php">Доп. задание</a>
+        </div>
     </div>
 </header>
