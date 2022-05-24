@@ -247,7 +247,7 @@ include 'bloki/menu.php';                 //подключаем меню
 
   <?
 
- include 'php/footer_dz_svet_podschet_slob_i_bukv.php';  // подключаем PHP c Дз о подсчете дней, букв, слов
+  include 'php/footer_dz_svet_podschet_slob_i_bukv.php';  // подключаем PHP c Дз о подсчете дней, букв, слов
   include_once 'php/temi_noch_i_den.php';               // подключаем PHP с дневной и ночной темой
   $den_ili_noch = smena_dnya_i_nochi();                 //запускаем фукнцию по смене дня и ночи
   echo  $den_ili_noch;

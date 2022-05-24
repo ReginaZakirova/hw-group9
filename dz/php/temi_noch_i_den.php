@@ -6,6 +6,7 @@ function smena_dnya_i_nochi ()
 $vremya_khasov= date('H'); // записываем в переменную $vremya_khasov количество часов
 $vremya_khasov=$vremya_khasov+2; // Что бы время было по Магнитогорскому времени ( а не по Москве)
 //    echo $vremya_khasov;
+   // $vremya_khasov=14;
 if ($vremya_khasov<19 and $vremya_khasov>7 ) {    // дневная тема
 //         echo "дневная тема";
     $den_ili_noch= "<style>
