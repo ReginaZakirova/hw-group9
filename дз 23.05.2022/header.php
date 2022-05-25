@@ -13,7 +13,7 @@
             <div class="mobilMenu" id="mobilMenu">м</div>
             <ul class="nav-menu menuOpen" id="navMenu">
                 <li>
-                    <a href="index.php" target="_blank" title="открыть главную страницу">главная</a>
+                    <a href="index.php?flag=1" target="_blank" title="открыть главную страницу">главная</a>
                 </li>
                 <li>
                     <a href="tasks.php" target="_blank" title="открыть задачи">задачи циклы</a>
@@ -23,6 +23,9 @@
                 </li>
                 <li>
                     <a href="tasksArray.php" target="_blank" title="открыть задачи">задачи массивы</a>
+                </li>
+                <li>
+                    <a href="authorizationPage.php" target="_blank" title="открыть задачи">авторизация</a>
                 </li>
             </ul>
         </nav>

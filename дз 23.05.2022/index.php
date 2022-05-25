@@ -1,3 +1,11 @@
+<?php
+    //логин log
+    //пароль pasw
+    if ($_GET['flag'] != 1) {
+        header('Location: http://hw/%d0%b4%d0%b7%2019.05.2022/authorizationPage.php');
+        exit( );
+    }
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -340,7 +348,53 @@
             }
         }
         numberIdenticalWords($str100);
-    ?>
+
+
+        echo "дз 24.05.2022 слайд 12 задача 2" . '<br>';
+
+        $a = $_REQUEST;
+        if ($a['password']) {
+            $a['password'] = md5($_REQUEST['password']);
+        }
+        $b = 'log';
+        $c = md5('pasw');
+        echo $c;
+        
+        print_r($a);
+        ?>
+
+        <form action="" method="post">
+            <label>логин
+                <input type="text" name="name">         <!--У меня и так появляется выпадающий список со старыми значениями
+                                                            Это делает браузер? Нужно было сделать фиксированный список как в задаче 3?-->
+            </label><br>
+            <label>пароль
+                <input type="password" name="password">
+            </label>
+            <input type="submit">
+        </form>
+        <a href="<?php 
+            if ($a['name'] == $b && $a['password'] == $c) {
+                echo '1';}
+            else echo '2';
+            ?>.php">вход</a>
+
+        <?php
+        echo '<br>';
+        echo "дз 24.05.2022 слайд 12 задача 3" . '<br>';
+        $aa = $_GET;
+        print_r($aa);
+        ?>
+        <form action="" method="get">
+            <select name="l">
+                <option value="1">Лаб1</option>
+                <option value="2">Лаб2</option>
+                <option value="3">Лаб3</option>
+                <option value="4">Лаб4</option>
+            </select>
+            <input type="submit">
+        </form>
+        <a href="phpcourse.php?l=<?php echo $aa['l']; ?>">ссылка</a>
     </main>
     <?php
         require "footer.php";

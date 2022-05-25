@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+    background-color: lightcyan;
+}
+
+main {
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 300px;
+    height: 300px;
+    border: 2px solid grey;
+    background-color: silver;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.submit {
+    margin: 15px;
+}
+
+h1 {
+    font-size: 40px;
+    color: chartreuse;
+    justify-content: center;
+    align-items: center;
+}
+
+
