@@ -131,10 +131,10 @@ justify-content: center;
 	margin-top: 20px;
 	background-color: #aca6b2;
 	display: grid;
-	grid-template-columns: 9fr 1fr 1fr;
+	grid-template-columns: 10fr 2fr 1fr 1fr;
 	grid-column-gap: 5px;
 }
-.menu-el{
+.menu-el, .reg_back{
 	margin: auto;
 	text-align: center;
 	font-size: 16pt;
