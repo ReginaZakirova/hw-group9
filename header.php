@@ -26,4 +26,7 @@ else $background_color = 'header_day';
         <a href="/arrays/arrays.php">Массивы</a>
         <a href="/strings/strings.php">Строки</a>
         <a href="/functions/functions.php">Функции</a>
+        <a href="/getpost/index.php">Гет и пост</a>
+        <a href="/cookiesession/index.php">Сессии и куки</a>
+        <a style="float: right; margin-top: 15px;" href="/getpost/index.php">Авторизация</a>
     </header>
