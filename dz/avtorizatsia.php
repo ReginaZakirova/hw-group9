@@ -1,3 +1,10 @@
+<?php
+
+
+
+setcookie ('name','User');
+?>
+
 <!doctype html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
@@ -30,15 +37,20 @@ include 'bloki/menu.php';                 //подключаем меню
     <div class="shablon_osnovnoy_blok_stranits">
         <center>
             <h2>Авторизация</h2></center>
+        <center>Пароль от Admin 1234 <br> Пароль от Вася  123<br> Пароль от Петя 12</center>
         <center>
             <form action="" method="POST">
                 <table border="1">
                     <tr>
                         <td>
-                            <label>имя пользователя</label>
+                            <label>Выбирите пользователя</label>
                         </td>
                         <td>
-                            <input type="text" name="name">
+                            <center><select name="name">
+                                <option>Admin</option>
+                                <option>Вася</option>
+                                <option>Петя</option>
+                            </select></center>
                         </td>
                     </tr>
                     <tr>
@@ -55,23 +67,38 @@ include 'bloki/menu.php';                 //подключаем меню
                                 <input type="submit" name="submit">
                         </td>
         </center>
+
         </tr>
         </table>
     </form></center>
+        <center>   <p><h2>Ссылки</h2> </p>    </center>
+        <center>  <p><a href="obrabotka_ssilok.php?id=1"  target="_blank">ФАКТ</a></p></center>
+        <center>  <p><a href="obrabotka_ssilok.php?id=2"  target="_blank">БИТРИКС</a></p></center>
+
     <?
-    // логин   Andr
+    // логин   Admin
     // пароль  1234
+echo $_POST['name1'];
     if(isset($_POST['submit'])) {  // если кнопка нажата
-        if (($_POST['name']=="Andr" ) and (md5($_POST['password2']) == md5("1234")) ) {
+        switch ($_POST['name']) {
+            case "Admin" and (md5($_POST['password2']) == md5("1234")):
+                header('Location: ./pritstvie.php');                break;
+            case "Вася" and (md5($_POST['password2']) == md5("123")) :
+                header('Location: ./pritstvie.php');           break;
+            case "Петя" and (md5($_POST['password2']) == md5("12")):
+                header('Location: ./pritstvie.php');               break;
+            default:
+                echo "<br><center>Пароль введен не верно пожалуйста попробуйте ещё раз</center><br>";
+        }
+     /*   if (($_POST['name']=="Admin" ) and (md5($_POST['password2']) == md5("1234")) ) {
             echo "<br> Вы получили доступ к секретным документам!<br>";
             header('Location: ./pritstvie.php');
         } else {
             echo "<br><center>Пароль введен не верно пожалуйста попробуйте ещё раз</center><br>";
-        }
+        } */
     }
-
     ?>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 </main>
 <!-- подключаем подвал сайта -->
