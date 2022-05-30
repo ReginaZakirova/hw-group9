@@ -1,5 +1,13 @@
 <? require_once($_SERVER['DOCUMENT_ROOT'].'/header.php'); ?>
-<? if(!isset($_POST['login']) && !isset($_POST['password']) && !isset($_GET['registr']) && !isset($_POST['login_registr'])){?>
+<main>
+<style>
+    form{
+        padding: 5px;
+    }    
+</style>
+<? 
+$grant = false;
+if(!isset($_POST['login']) && !isset($_POST['password']) && !isset($_GET['registr']) && !isset($_POST['login_registr'])){?>
 <form action="" method="POST">
     Ваш логин: <input type="text" name="login"><br><br>
     Ваш пароль: <input type="password" name="password"><br>
@@ -23,10 +31,8 @@ elseif(isset($_POST['login_registr']) && isset($_POST['password_registr'])){
 }
 if(isset($_POST['login']) && isset($_POST['password'])){
     require_once($_SERVER['DOCUMENT_ROOT'].'/getpost/access.php');
-    $grant = false;
     if(isset($access[$_POST['login']])){
         if($access[$_POST['login']] == sha1($_POST['password'])){
-            echo '<h1>Приветствую тебя '.$_POST['login'].' </h1>';
             $grant=true;
         }
     }
@@ -40,5 +46,9 @@ if(isset($_POST['login']) && isset($_POST['password'])){
     <a href="index.php?registr=yes">Зарегистрироваться</a>
     <? }
 }
-?>
+if($grant==true){
+    echo "<p style ='margin: 0px;'>Последняя посещенная страница: <b>".$_COOKIE['last_page']."</b></p>";
+    echo '<h1>Приветствую тебя '.$_POST['login'].' </h1>';
+} ?>
+</main>
 <? require_once($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
