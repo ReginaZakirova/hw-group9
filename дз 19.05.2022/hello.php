@@ -1,3 +1,10 @@
+<?php
+session_start([
+    'cookie_lifetime' => 86400,
+]);
+
+// ссылка открывает сайт в новом окне и если вернуться 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +20,11 @@
 ?>
     <main>
         <h1> приветственная страница </h1>
+        <h2><?php 
+        if ($_SESSION['name']) {
+            echo 'последний раз вы посещали сайт ' . $_SESSION['name'];
+        } ?>
+        </h2>
 
     </main>
 <?php

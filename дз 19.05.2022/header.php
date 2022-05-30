@@ -1,3 +1,14 @@
+<?php
+session_start();
+if ($_POST['color']) {
+    $_SESSION['color'] = $_POST['color'];
+}
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +37,18 @@
                 </li>
                 <li>
                     <a href="authorizationPage.php" target="_blank" title="открыть задачи">авторизация</a>
+                </li>
+                <li>
+                    <form action="" method="post">       
+                        <legend>цвет фона</legend>
+                        <select name="color" style='width: 50px;'>
+                            <option value="green" style='background-color: green;'></option>
+                            <option value="blue" style='background-color: blue;'></option>
+                            <option value="red" style='background-color: red;'></option>
+                            <option value="grey" style='background-color: grey;'></option>
+                        </select>
+                        <input type="submit" value="выбрать">
+                    </form>
                 </li>
             </ul>
         </nav>

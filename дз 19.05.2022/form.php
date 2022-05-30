@@ -1,3 +1,20 @@
+<?php
+    session_start([
+        'cookie_lifetime' => 86400,
+    ]);
+        if ($_GET['course']) {
+            $_SESSION['name'] = $_GET['course'];
+        }
+    
+   
+    if ($_GET['course'] == 'факт') {
+        header('Location: https://fact.digital/');
+    }
+    if ($_GET['course'] == 'битрикс') {
+        header('Location: https://www.bitrix24.ru/');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +32,15 @@
             <input type="password" name="password">
         </label>
         <input class="submit" type="submit" value="вход">
-        <li>
-            <a href="registration.php" target="_blank" title="регистрация">регистрация</a>
-        </li>
+        <a href="registration.php" target="_blank" title="регистрация">регистрация</a>
+    </form>
+    <form action="" method="get">
+        <legend>на какой сайт перейти?</legend>
+        <select name="course">
+            <option value="факт">факт</option>
+            <option value="битрикс">битрикс</option>
+        </select>
+        <input class="submit" type="submit" value="переход на сайт">
     </form>
 </body>
 </html>

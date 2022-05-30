@@ -1,10 +1,14 @@
 <?php
     //логин log
     //пароль pasw
+    session_start();
     if ($_GET['flag'] != 1) {
         header('Location: http://hw/%d0%b4%d0%b7%2019.05.2022/authorizationPage.php');
         exit( );
     }
+
+    $BodyColor = $_SESSION['color'];
+// чтобы удалить сессию session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,7 +18,7 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Домашняя работа 1</title>
 </head>
-<body class="night">
+<body class="night" style='background-color: <?php echo $BodyColor; ?>'>
     <?php
         require "header.php";
     ?>
