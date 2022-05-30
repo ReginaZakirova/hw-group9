@@ -1,5 +1,5 @@
 <?php
-$pages = ['fact' => 'Факт', 'bitrix' => 'Битрикс'];
+setcookie('page', 'fact', time() + 3600 * 24 * 7);
 ?>
 <!doctype html>
 <html lang="en">
@@ -8,7 +8,7 @@ $pages = ['fact' => 'Факт', 'bitrix' => 'Битрикс'];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Циклы</title>
+    <title>Факт</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
@@ -17,10 +17,7 @@ $pages = ['fact' => 'Факт', 'bitrix' => 'Битрикс'];
 <body>
 <?php require 'php/header.php';?>
 <main>
-    <p>Вы успешно авторизовались!</p>
-    <p><?php echo isset($_COOKIE['user']) && isset($_COOKIE['page']) ? $_COOKIE['user'] . ', последний раз вы посещали 
-    страницу "' . $pages[$_COOKIE['page']] . '"' : "Вы еще не посещали ни одной страницы";?></p>
-    <img src="img/welcome.jpg" alt="">
+    <p>Вы посетили страницу Факт!</p>
 </main>
 <?php require 'php/footer.php';?>
 </body>

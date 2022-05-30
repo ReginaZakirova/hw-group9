@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
+    <?php include 'php/back-color.php';?>
 </head>
-<body>
 <?php require 'php/header.php';?>
 <main>
     <div class="photo">

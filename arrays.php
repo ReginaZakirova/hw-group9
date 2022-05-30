@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
+    <?php include 'php/back-color.php';?>
     <?php
     function fill_array($start, $length, $min = 0, $max = 100): array
     {

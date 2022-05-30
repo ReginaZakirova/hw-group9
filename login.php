@@ -5,23 +5,29 @@ $login = $_POST['reg_login'] ?? '';
 $login_occupied = False;
 if ($login != '') {
     if (!isset($users[$login])) {
-        $users[$login] = md5($_POST['reg_pass']);
+        $users[$login]['pass'] = md5($_POST['reg_pass']);
     }
     else {
         $login_occupied = True;
     }
 }
-file_put_contents('json/users.json', json_encode($users));
 //Авторизация
 $login_failed = False;
 if (isset($_POST['log_login']) ){
-    if (isset($users[$_POST['log_login']]) && $users[$_POST['log_login']] == md5($_POST['log_pass'])) {
+    $login = $_POST['log_login'];
+    if (isset($users[$login]['pass']) && $users[$login]['pass'] == md5($_POST['log_pass'])) {
+        if (isset($_COOKIE['user'])){
+            $users[$_COOKIE['user']]['page'] = $_COOKIE['page'];
+        }
+        setcookie('user', $login, time() + 3600 * 24 * 7);
+        setcookie('page', $users[$login]['page'], time() + 3600 * 24 * 7);
         header("Location: welcome.php");
     }
     else{
         $login_failed = True;
     }
 }
+file_put_contents('json/users.json', json_encode($users));
 //Удалим конфиденциальную информацию
 unset($_POST['reg_login']);
 unset($_POST['reg_pass']);
@@ -39,6 +45,7 @@ unset($_POST['log_pass']);
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <?php include 'php/day-night.php';?>
+    <?php include 'php/back-color.php';?>
 </head>
 <body>
 <?php require 'php/header.php';?>

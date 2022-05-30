@@ -16,5 +16,11 @@
         <div class="menu-item">
             <a class="menu-link" href="login.php">Авторизация</a>
         </div>
+        <div class="menu-item">
+            <a class="menu-link" href="fact.php">Факт</a>
+        </div>
+        <div class="menu-item">
+            <a class="menu-link" href="bitrix.php">Битрикс</a>
+        </div>
     </div>
 </header>

@@ -36,6 +36,15 @@ $words_count = word_count($text);
 ?>
 <footer class="footer__flex_container">
     <div class="footer__flex_item">
+        <form action="">
+            <label>
+                Цвет фона:
+                <input type="color" name="color" value=<?php echo $color?>>
+            </label>
+            <input type="submit" value="Изменить">
+        </form>
+    </div>
+    <div class="footer__flex_item">
         <?php echo "На главной странице: $words_count слов и $vowel_count гласных";?>
     </div>
     <div class="footer__flex_item">
