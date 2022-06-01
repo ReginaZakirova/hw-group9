@@ -13,6 +13,7 @@
     <?php include 'php/back-color.php';?>
 </head>
 <?php require 'php/header.php';?>
+<body>
 <main>
     <div class="photo">
         <img alt="Фотография" class="photo__img_width_100-percent" src="img/photo.jpg">
