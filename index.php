@@ -1,4 +1,3 @@
-
 <? require_once('header.php'); ?>
     <main>
         <div class="lesson1">
