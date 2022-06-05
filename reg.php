@@ -1,6 +1,8 @@
 <?
+session_start();
 //$use_login = 'admin';
 //$use_pass = 'admin'; md5(admin);
+//session_destroy(); удаление текущей сессии
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,19 +39,44 @@
     </fieldset>
   </form>
 <?
-  $use_login = 'admin';
-  $use_pass = 'admin';// md5(admin);
+  $log_pas = [
+    'Bob' => [md5('123')],
+    'Tom' => [md5('321')],
+    'Sam' => [md5('777')]
+  ];
+  /*echo '<pre>'; 
+  print_r($log_pas);
+  echo '<pre>';*/
+  /*$use_login = 'admin';
+  $use_pass = 'admin';// md5(admin);*/
+  $login = $_POST['login'];
   $pass = isset($_POST['pass']) ? md5($_POST['pass']) : Null;
   $_POST['pass'] = $pass;
+
+  foreach ($log_pas as $arr_log => $pw) {
+    if($arr_log == $login){
+      foreach ($pw as $item) {
+        if ($item == $_POST['pass']) {
+          $_SESSION['login'] = $login;
+          $_SESSION['pass'] = md5($pass);
+          echo '<meta http-equiv="refresh" content="0;http://heap/hello_user.php">';
+
+        }
+        else echo 'Пароль не верен!';
+      }
+    }
+  }
+
+
   /*echo '<pre>'; 
   print_r($_POST);
   echo '<pre>';*/
-  if ($use_login == $_POST['login'] & md5($use_pass) == $_POST['pass']  ) { 
+  /*if ($use_login == $_POST['login'] & md5($use_pass) == $_POST['pass']  ) { 
      echo '<meta http-equiv="refresh" content="0;http://heap/hello_user.php">';
   }
    else {
     echo "Пара логин+пароль не верна или не существует";
-  }
+  }*/
 ?>
   </div>
   <?
