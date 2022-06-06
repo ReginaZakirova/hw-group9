@@ -8,6 +8,23 @@
     }
 
     $BodyColor = $_SESSION['color'];
+
+    $hostName = 'localhost';
+    $UserName = 'Anton';
+    $password = 'pasw';
+    $dbname = 'город';
+
+    
+    $dbcon = mysqli_connect($hostName, $UserName, $password, $dbname);
+    mysqli_set_charset($dbcon, 'utf8');
+    $select = "SELECT name FROM человек";
+    $arr = mysqli_fetch_all(mysqli_query($dbcon, $select), MYSQLI_ASSOC);
+    
+    foreach ($arr as $key => $value) {
+        foreach ($value as $key2 => $value2)
+            echo $value2 . '<br>';
+    }
+
 // чтобы удалить сессию session_destroy();
 ?>
 <!DOCTYPE html>
@@ -161,7 +178,7 @@
         function nightTheme() {
             $time = getdate();
             $time = $time["hours"];
-            if ($time < 8 || $time >= 20) {
+            if ($time < 8 || $time >= 21) {
                 echo "<link rel='stylesheet' href='style/styleNight.css'>";
             }
         }
