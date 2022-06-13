@@ -26,7 +26,7 @@
 <body>
     <form action="" method="get">
         <label>логин
-            <input type="text" name="name">
+            <input type="text" name="login">
         </label><br>
         <label>пароль
             <input type="password" name="password">

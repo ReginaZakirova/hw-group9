@@ -1,3 +1,12 @@
+<?php
+require_once 'authorizationClass.php';
+$connection2 = new authorization('localhost', 'Anton', 'pasw', 'autho');
+$connection2 -> encryption($connection2 -> websitePass);
+
+$connection2 -> dataValidation($connection2 -> websiteLog, $connection2 -> websitePass);
+$connection2 -> registration($connection2 -> websiteLog, $connection2 -> websitePass);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,24 +24,15 @@
     <main>
         <form action="" method="get">
             <label>придумайте логин
-                <input type="text" name="name">
+                <input type="text" name="login">
             </label><br>
             <label>придумайте пароль
                 <input type="password" name="password">
             </label>
             <input class="submit" type="submit" value="регистрация">
+            <a href="authorizationPage.php" target="_blank" title="регистрация">страница авторизации</a>
             
         </form>
-        <?php
-        if ($_GET['name'] && $_GET['password']) {
-            $a = $_GET['name'];
-            $b = $_GET['password'];
-            $kk = "authorizationPage.php?name=$a&password=$b";
-            header("Location: http://hw/%D0%B4%D0%B7%2019.05.2022/$kk");
-            exit( );
-        }
-        //чтобы войти по новым данным нужно как то их сохранить в базу я так понял это будет дальше поэтому пока войти можно только по одному паролю
-        ?>
 
     </main>
 <?php

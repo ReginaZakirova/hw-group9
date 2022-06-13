@@ -1,3 +1,14 @@
+
+<?php
+require_once 'authorizationClass.php';
+
+$connection = new authorization('localhost', 'Anton', 'pasw', 'autho');
+$connection -> encryption($connection -> websitePass);
+
+$connection -> dataValidation($connection -> websiteLog, $connection -> websitePass);
+$connection -> authirization($connection -> websiteLog, $connection -> websitePass);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,26 +26,6 @@
     <main>
         <?php
             require "form.php";
-        ?>
-    
-        <?php 
-        if ($_REQUEST['password']) {
-            $_REQUEST['password'] = md5($_REQUEST['password']);
-        }
-        $b = 'log';
-        $c = md5('pasw');
-
-        if ($_REQUEST['name'] == $b && $_REQUEST['password'] == $c) {
-            $kk = 'hello.php?flag=1';
-            header("Location: http://hw/%D0%B4%D0%B7%2019.05.2022/$kk");
-            exit( );
-        }
-        else {
-            $kk = 'authorizationPage.php';
-        }
-        
-       
-
         ?>
 
     </main>

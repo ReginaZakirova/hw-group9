@@ -7,25 +7,26 @@
         exit( );
     }
 
-    $BodyColor = $_SESSION['color'];
+    //$BodyColor = $_SESSION['color'];
 
-    $hostName = 'localhost';
-    $UserName = 'Anton';
-    $password = 'pasw';
-    $dbname = 'город';
+    //$hostName = 'localhost';
+    //$UserName = 'Anton';
+    //$password = 'pasw';
+    //$dbname = 'город';
 
     
-    $dbcon = mysqli_connect($hostName, $UserName, $password, $dbname);
-    mysqli_set_charset($dbcon, 'utf8');
-    $select = "SELECT name FROM человек";
-    $arr = mysqli_fetch_all(mysqli_query($dbcon, $select), MYSQLI_ASSOC);
+    //$dbcon = mysqli_connect($hostName, $UserName, $password, $dbname);
+    //mysqli_set_charset($dbcon, 'utf8');
+    //$select = "SELECT name FROM человек";
+    //$arr = mysqli_fetch_all(mysqli_query($dbcon, $select), MYSQLI_ASSOC);
     
-    foreach ($arr as $key => $value) {
-        foreach ($value as $key2 => $value2)
-            echo $value2 . '<br>';
-    }
+    //foreach ($arr as $key => $value) {
+        //foreach ($value as $key2 => $value2)
+            //echo $value2 . '<br>';
+    //}
 
 // чтобы удалить сессию session_destroy();
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -42,12 +43,12 @@
     <main>
         <div class="main-iconConteiner">
             <div class="main-icon">
-                <img src="img/1.png" width="230" height="160">
+                <img src="img/1.png" width="230" height="160" alt="картинка">
             </div>
         </div>
         <div class="main-inf">
             <div class="mainInf-foto"> 
-                <img src="img/2.jpg" width="450" height="365">
+                <img src="img/2.jpg" width="450" height="365" alt="картинка">
             </div>
             <div class="mainInf-text">
                 <h1>Марков Антон</h1>
