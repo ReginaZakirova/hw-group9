@@ -1,0 +1,74 @@
+﻿table {
+     border: 1px solid green;    /* Рамка вокруг таблицы */
+     margin: auto;    /* Выравниваем таблицу по центру окна */
+}
+ td {
+     border: 1px solid black;
+}
+ body{
+     margin: 0px;
+     padding:0px;
+}
+ .yacheyka-gruppa-elementov {
+     background-color: #FFFFF0;
+     height: 4px;
+     text-align:center;
+}
+ .yacheyka-pervaya-stroka {
+     background-color: #FFFFF0;
+     height: 30px;
+     width: 120px;
+     text-align:center;
+}
+ .yacheyka-pervay-stlbes {
+     background-color: #FFFFF0;
+     height: 40px;
+     width: 50px;
+     text-align:center;
+}
+ h1 {
+     margin:0;    /*что h1 не смещалась сама собой*/
+     margin-left: 4px;    /*отступ справа*/
+}
+ .yacheyka {
+     height: 80px;
+     width: 130px;
+}
+ .yacheyka-levo-verh {
+     background-color: #FFB6C1;
+     height: 45px;
+     float: left;
+     width: 50%;
+}
+ .yacheyka-pravo-verh {
+     background-color: #FFB6C1;
+     height: 45px;
+     float: right;
+     width: 50%;
+     text-align:right;
+}
+ .formula span{
+     display: inline-block;
+}
+ .formula span sup, .formula span sub {
+     display: block;
+     font-size: 100%;    /*размер текста*/
+     position: relative;
+     top: 0.3em;
+     vertical-align: baseline;
+     margin-right: 4px;    /*отступ справа*/
+}
+ .formula span sup {    /*делаем только верхнюю цыфры жирной*/
+     font-weight:bold 
+}
+ .yacheyka-niz {
+     background-color: #FFB6C1;
+     height: 35px;
+     float: left;
+     width: 100%;
+}
+ .text-vnizu-yacheyka {
+     padding-top: 15px;
+     margin-left: 4px;
+}
+ 

@@ -1,0 +1,234 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+.blok-name, .blok-info, .blok-otziv, .flex-grid, .blok-menu {
+    font-size : 17pt;
+    font-family : "Comic Sans MS", "Comic Sans", cursive;
+    text-align : justify;
+}
+
+table {
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+    border: 1px;
+}
+
+.div-center {
+ align-content: center;
+    text-align: center
+
+
+}
+.blok-anketa {
+    display : flex;
+    flex-wrap : wrap;
+    flex-direction : row;
+    justify-content : space-evenly;
+    margin : 1000px;
+    background-color : #e28698;
+}
+h1, h2 {
+    text-align : center;
+}
+.blok_shapka {
+    display : flex;
+    justify-content : right;
+    height : 200px;
+    width : 100%;
+}
+.blok-menu {
+    display : flex;
+    height : 40px;
+    width : 100%;
+    align-items : center;
+    justify-content : center;
+}
+a {
+    text-decoration : none;
+}
+a:hover {
+    color : #F60;
+}
+.nav {
+    margin : -3px 0;
+}
+.nav ul {
+    margin : 0;
+    padding : 0;
+}
+.nav li {
+    margin : 0 5px 10px 0;
+    padding : 0;
+    list-style : none;
+    display : inline-block;
+}
+.nav a {
+    padding : 3px 12px;
+    text-decoration : none;
+    color : #999;
+    line-height : 100%;
+}
+.nav a:hover {
+    color : #000;
+}
+.nav .current a {
+    background : #aa8787;
+    color : #fff;
+    border-radius : 3px;
+}
+.nav.right ul {
+    text-align : right;
+}
+.nav.center ul {
+    text-align : center;
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        position : relative;
+        min-height : 40px;
+    }
+    .nav ul {
+        width : 180px;
+        padding : 5px 0;
+        position : absolute;
+        top : 0;
+        left : 0;
+        border : #aaa solid 1px;
+        background : url(../images/icon-menu.png) 10px 11px no-repeat #FAFAFA;
+        border-radius : 5px;
+        box-shadow : 0 1px 2px rgb(0, 0, 0, 0.3);
+    }
+    .nav li {
+        display : none;
+        margin : 0;
+    }
+    .nav .current {
+        display : block;
+    }
+    .nav a {
+        display : block;
+        padding : 5px 5px 5px 32px;
+        text-align : left;
+    }
+    .nav .current a {
+        background : none;
+        color : #666;
+    }
+    .nav ul:hover {
+        background-image : none;
+    }
+    .nav ul:hover li {
+        display : block;
+        margin : 0 0 5px;
+    }
+    .nav ul:hover .current {
+        background : url(../images/icon-check.png) 10px 7px no-repeat;
+    }
+    .nav.right ul {
+        left : auto;
+        right : 0;
+    }
+    .nav.center ul {
+        left : 50%;
+        margin-left : -90px;
+    }
+}
+.photo {
+    display : block;
+    margin : 0 auto;
+    margin-left : auto;
+    height : 550px;
+    float : none;
+}
+.podblok-grid {
+    display : grid;
+    grid-template-columns : 1fr 2fr 2fr;
+    grid-template-rows : 1fr 6fr;
+    gap : 10px;
+    column-gap : 15px;
+    justify-content : space-evenly;
+    margin : 0;
+    padding : 10px;
+    grid-template-areas : "phot nam nam" "phot inf otz ";
+}
+.blok-photo {
+    display : grid;
+    height : 600px;
+    width : 550px;
+    align-self : center;
+    justify-self : center;
+    grid-area : phot;
+}
+.blok-name {
+    display : grid;
+    height : 100%;
+    max-height : 40px;
+    grid-area : nam;
+    align-self : center;
+    justify-self : center;
+}
+.blok-info {
+    grid-area : inf;
+    justify-self : center;
+    padding : 15px;
+}
+.blok-otziv {
+    display : grid;
+    padding : 15px;
+    grid-area : otz;
+}
+@media screen and (max-width: 1050px) {
+    .podblok-grid {
+        display : grid;
+        grid-template-columns : 250px 250px;
+        grid-template-rows : 1fr;
+        gap : 5px;
+        column-gap : 5px;
+        justify-content : space-evenly;
+        margin : 0;
+        padding : 10px;
+        grid-template-areas : "phot phot" "nam nam" "inf otz ";
+    }
+    .blok-menu {
+        justify-content : left;
+    }
+}
+.footer1 {
+    text-align : center;
+}
+.social-icons-5 {
+    list-style : none;
+    padding : 0;
+    display : flex;
+    justify-content : center;
+}
+.social-icons-5 a {
+    text-decoration : none;
+    color : #fff;
+    width : 60px;
+    height : 60px;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    border-radius : 10px;
+    margin : 0 6px;
+    font-size : 26px;
+    background : #337AB7;
+    transition : border-top-left-radius 0.1s 0s linear, border-top-right-radius 0.1s 0.1s linear, border-bottom-right-radius 0.1s 0.2s linear, border-bottom-left-radius 0.1s 0.3s linear;
+    transition : transform 0.4s 0s linear, border-top-left-radius 0.1s 0s linear, border-top-right-radius 0.1s 0.1s linear, border-bottom-right-radius 0.1s 0.2s linear, border-bottom-left-radius 0.1s 0.3s linear;
+    transition : transform 0.4s 0s linear, border-top-left-radius 0.1s 0s linear, border-top-right-radius 0.1s 0.1s linear, border-bottom-right-radius 0.1s 0.2s linear, border-bottom-left-radius 0.1s 0.3s linear;
+}
+.social-icons-5 a img {
+    width : 26px;
+    height : 26px;
+}
+.social-icons-5 a i, .social-icons-5 a img {
+    transition : transform 0.4s 0s linear;
+}
+.social-icons-5 a:hover {
+    transform : rotate(360deg);
+    border-radius : 50%;
+}
+.social-icons-5 a:hover i, .social-icons-5 a:hover img {
+    transform : rotate(-360deg);
+}
