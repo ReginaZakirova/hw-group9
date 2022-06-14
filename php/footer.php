@@ -36,7 +36,7 @@ $words_count = word_count($text);
 ?>
 <footer class="footer__flex_container">
     <div class="footer__flex_item">
-        <form action="">
+        <form>
             <label>
                 Цвет фона:
                 <input type="color" name="color" value=<?php echo $color?>>

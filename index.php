@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Главная</title>
     <link rel="stylesheet" href="css/index.css">
@@ -12,8 +11,8 @@
     <?php include 'php/day-night.php';?>
     <?php include 'php/back-color.php';?>
 </head>
-<?php require 'php/header.php';?>
 <body>
+<?php require 'php/header.php';?>
 <main>
     <div class="photo">
         <img alt="Фотография" class="photo__img_width_100-percent" src="img/photo.jpg">

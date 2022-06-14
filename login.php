@@ -1,50 +1,26 @@
 <?php
-//Параметры соединения с базой
-$hostname = 'localhost';
-$username = 'Konstantin';
-$password = '123';
-$dbname = 'users';
-$dbconn = mysqli_connect($hostname, $username, $password, $dbname);
-mysqli_set_charset($dbconn, 'utf8');
+require "class/auth.php";
 //Регистрация пользователей
-$sql = 'SELECT user, pass FROM users';
-$users = mysqli_fetch_all(mysqli_query($dbconn, $sql), MYSQLI_ASSOC);
 $reg_login = $_POST['reg_login'] ?? NULL;
-$login_occupied = False;
-foreach ($users as $value){
-    if ($value['user'] == $reg_login){
-        $login_occupied = True;
-    }
-}
-if (!is_null($reg_login) && !$login_occupied) {
-    $reg_pass = md5($_POST['reg_pass']);
-    $sql = "INSERT INTO `users` VALUES (NULL,'$reg_login','$reg_pass', NULL)";
-    mysqli_query($dbconn, $sql);
+$reg_pass = isset($_POST['reg_pass']) ? md5($_POST['reg_pass']) : NULL;
+$reg_result = -1;
+if ($reg_login && $reg_pass){
+    $auth = new auth($reg_login, $reg_pass);
+    $reg_result = $auth->register();
 }
 //Авторизация
 $log_login = $_POST['log_login'] ?? NULL;
 $log_pass = isset($_POST['log_pass']) ? md5($_POST['log_pass']) : NULL;
-$login_failed = False;
-if (!is_null($log_login) && !is_null($log_pass)){
-    $sql = "SELECT user, pass, page FROM users WHERE user = '$log_login'";
-    $users = mysqli_fetch_all(mysqli_query($dbconn, $sql), MYSQLI_ASSOC);
-    if (count($users) > 0 && $users[0]['user'] == $log_login && $users[0]['pass'] == $log_pass) {
-        $page = $_COOKIE['page'] ?? NULL;
-        $page_user = $_COOKIE['user'] ?? NULL;
-        $sql = "UPDATE `users` SET `page`='$page' WHERE user = '$page_user'";
-        mysqli_query($dbconn, $sql);
-        $sql = "SELECT page FROM users WHERE user = '$log_login'";
-        $arr = mysqli_fetch_all(mysqli_query($dbconn, $sql), MYSQLI_ASSOC);
-        mysqli_query($dbconn, $sql);
-        setcookie('user', $log_login, time() + 3600 * 24 * 7);
-        setcookie('page', $arr[0]['page'], time() + 3600 * 24 * 7);
-        header("Location: welcome.php");
-    }
-    else{
-        $login_failed = True;
-    }
+$page = $_COOKIE['page'] ?? NULL;
+$page_user = $_COOKIE['user'] ?? NULL;
+$log_result = -1;
+if ($log_login && $log_pass){
+    $auth = new auth($log_login, $log_pass);
+    $log_result = $auth->login($page_user, $page);
 }
-file_put_contents('json/users.json', json_encode($users));
+if ($log_result == 0) {
+    header("Location: welcome.php");
+}
 //Удалим конфиденциальную информацию
 unset($_POST['reg_login']);
 unset($_POST['reg_pass']);
@@ -80,8 +56,9 @@ unset($_POST['log_pass']);
         <input type="submit" value="Зарегистрировать">
     </form>
     <p>
-        <?php echo !is_null($reg_login) && !$login_occupied ? "Пользователь $reg_login успешно зарегистрирован!" : '';?>
-        <?php echo $login_occupied ? "Пользователь с именем '$reg_login' уже существует" : '';?>
+        <?php echo !is_null($reg_login) && $reg_result == 0 ? "Пользователь $reg_login успешно зарегистрирован!" : '';?>
+        <?php echo $reg_result == 1 ? "Пользователь с именем '$reg_login' уже существует" : '';?>
+        <?php echo $reg_result == 2 ? "Нет соединения с базой данных пользователей!" : '';?>
     </p>
     <h4>Авторизация</h4>
     <form action="" method="post">
@@ -96,7 +73,8 @@ unset($_POST['log_pass']);
         <input type="submit" value="Авторизоваться">
     </form>
     <p>
-        <?php echo $login_failed ? "Неверное имя или пароль" : '';?>
+        <?php echo $log_result == 1 ? "Неверное имя или пароль" : '';?>
+        <?php echo $log_result == 2 ? "Нет соединения с базой данных пользователей!" : '';?>
     </p>
 </main>
 <?php require 'php/footer.php';?>
