@@ -1,4 +1,15 @@
 <?
+require_once($_SERVER['DOCUMENT_ROOT'].'/class.php');
+if(isset($_GET['do'])){
+    if($_GET['do'] = 'out');
+    setcookie("token", "", time() - 3600);
+    header( 'Location: /');
+}
+if(isset($_COOKIE['token']) && !empty($_COOKIE['token'])){
+    $db = new DBconn();
+    $query = "SELECT name from tokens JOIN users ON tokens.user_login = users.login WHERE tokens.token='".$_COOKIE['token']."'";
+    $user_name = mysqli_fetch_assoc($db->sql_query($query));
+} 
 session_start(); 
 if(!isset($_REQUEST['color_main']) && !isset($_SESSION['color_main'])){
     $_SESSION['color_main'] = '#2f4f4f';
@@ -19,14 +30,20 @@ else $background_color = 'header_day';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HW 1 урок</title>
+    <title>Главная</title>
     <link rel='stylesheet' href="/style/style.css">
     <script src="/js/script.js"></script>
 </head>
 <body style="background-color: <? echo $_SESSION['color_main'] ? $_SESSION['color_main'] : '#2f4f4f'; ?>">
     <header class="<? echo $background_color; ?>">
         <div class="color">
-            <a href="/getpost/index.php">Авторизация</a>
+            <? if(isset($user_name)){ ?>
+                <span> <? echo $user_name['name']; ?> </span>
+                <a href="/autorize.php?do=out">Выйти</a>
+                <? }
+                else{ ?> 
+                <a href="/autorize.php">Авторизация</a>
+                <? } ?>
             <form action="" method="POST">
             <span>Выберите цвет сайта</span>
                 <input type='color' oninput="changeColor()" name='color_main' value=<? echo $_SESSION['color_main'] ? $_SESSION['color_main'] : '#2f4f4f'; ?>>
@@ -43,4 +60,5 @@ else $background_color = 'header_day';
         <a href="/functions/functions.php">Функции</a>
         <a href="/getpost/index.php">Гет и пост</a>
         <a href="/cookiesession/index.php">Сессии и куки</a>
+        <a href="/class/index.php">Классы</a>
     </header>

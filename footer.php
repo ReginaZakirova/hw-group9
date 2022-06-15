@@ -1,7 +1,7 @@
     <footer class="footer">
         <div style="height: 100%">
                 <?
-                    if($_SERVER['REQUEST_URI'] == '/index.php') $str = $text_about_me.implode(' ',$text_review);
+                    if($_SERVER['PHP_SELF'] == '/index.php') $str = $text_about_me.implode(' ',$text_review);
                     else $str = file_get_contents($_SERVER['DOCUMENT_ROOT'].$_SERVER['REQUEST_URI']);
                     $str = strip_tags($str);
                     $arr_str = explode(' ',$str);

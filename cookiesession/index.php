@@ -1,5 +1,3 @@
-<? 
-?>
 <? require_once($_SERVER['DOCUMENT_ROOT'].'/header.php'); ?>
 <form action="about.php">
     Ваше имя: <input type="text" name="name">

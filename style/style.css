@@ -6,6 +6,9 @@ body{
 body *{
     border-radius: 10px;
 }
+form{
+    padding: 5px;
+}   
 .header_day{
     height: 100px;
     width: 100%;

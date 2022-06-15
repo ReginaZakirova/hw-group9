@@ -1,10 +1,5 @@
 <? require_once($_SERVER['DOCUMENT_ROOT'].'/header.php'); ?>
 <main>
-<style>
-    form{
-        padding: 5px;
-    }    
-</style>
 <? 
 $grant = false;
 if(!isset($_POST['login']) && !isset($_POST['password']) && !isset($_GET['registr']) && !isset($_POST['login_registr'])){?>
